@@ -52,16 +52,14 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
 
   React.useEffect(() => {
     const video = videoRef.current
-    if (video) {
+    if (video && typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches) {
       video.defaultMuted = true
       video.muted = true
       video.setAttribute("playsinline", "true")
       video.setAttribute("webkit-playsinline", "true")
       const playPromise = video.play()
       if (playPromise !== undefined) {
-        playPromise.catch((err) => {
-          console.warn("Mobile background video autoplay prevented by browser policy:", err)
-        })
+        playPromise.catch(() => {})
       }
     }
 
@@ -141,6 +139,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
   return (
     <section id="hero" className="relative flex min-h-svh w-full max-w-full items-center overflow-hidden pt-24 pb-14 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 bg-[#0F172A]">
       <div className="absolute inset-0 z-0 w-full h-full max-w-full overflow-hidden pointer-events-none bg-[#0F172A]">
+        {/* Desktop Background Video: visible on md and larger screens */}
         <video
           ref={videoRef}
           autoPlay
@@ -148,11 +147,20 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none opacity-95 transition-opacity duration-700 select-none"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover object-center pointer-events-none opacity-95 transition-opacity duration-700 select-none"
           aria-hidden="true"
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
+
+        {/* Mobile Static Backdrop: visible on screens smaller than md */}
+        <div className="block md:hidden absolute inset-0 w-full h-full bg-gradient-to-b from-[#0B1329] via-[#0F172A] to-[#0A0F1D] pointer-events-none overflow-hidden">
+          <div className="absolute -top-20 -left-20 size-80 rounded-full bg-[#3B82F6]/15 blur-[100px]" />
+          <div className="absolute top-1/3 -right-20 size-72 rounded-full bg-[#06B6D4]/12 blur-[90px]" />
+          <div className="absolute -bottom-20 left-1/4 size-72 rounded-full bg-[#3B82F6]/10 blur-[100px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b18_1px,transparent_1px),linear-gradient(to_bottom,#1e293b18_1px,transparent_1px)] bg-[size:32px_32px] opacity-70" />
+        </div>
+
         <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/28 via-[#0F172A]/20 to-[#0F172A]/32 pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/60 to-transparent pointer-events-none" />
       </div>
