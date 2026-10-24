@@ -1,0 +1,363 @@
+import * as React from "react"
+import {
+  HandHeart,
+  Users,
+  ShieldCheck,
+  Play,
+  ArrowRight,
+  Heart,
+  ShoppingBag,
+  Smartphone,
+  Accessibility,
+  AlertCircle,
+  Mic,
+  Clock,
+  CheckCircle2,
+} from "lucide-react"
+import { useRouter } from "@/lib/router"
+import { useAuth } from "@/lib/auth-context"
+import { Button } from "@/components/ui/button"
+import { type RequestCategory } from "@/lib/supabase"
+
+type HeroProps = {
+  onOpenVideoModal: () => void
+  onRequestCare?: (category?: RequestCategory, defaultTitle?: string) => void
+  onOpenVoiceAssistant?: () => void
+}
+
+type QuickCategory = {
+  id: RequestCategory
+  label: string
+  icon: React.ReactNode
+  defaultTitle: string
+}
+
+const quickCategories: QuickCategory[] = [
+  { id: "senior_care", label: "Senior Care", icon: <Heart className="size-3.5" />, defaultTitle: "Senior Companionship & Check-in" },
+  { id: "daily_errands", label: "Daily Errands", icon: <ShoppingBag className="size-3.5" />, defaultTitle: "Grocery & Pharmacy Errand Run" },
+  { id: "tech_setup", label: "Tech Help", icon: <Smartphone className="size-3.5" />, defaultTitle: "Smartphone & iPad Setup" },
+  { id: "mobility_assistance", label: "Clinic Escort", icon: <Accessibility className="size-3.5" />, defaultTitle: "Doctor Appointment & Walking Escort" },
+  { id: "emergency_sos", label: "Urgent SOS", icon: <AlertCircle className="size-3.5" />, defaultTitle: "Urgent Welfare Check" },
+]
+
+export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: HeroProps) {
+  const { navigate } = useRouter()
+  const { user, profile } = useAuth()
+  const isClient = !!user && (profile?.role === "standard_requester" || profile?.role === "senior_requester" || !profile?.role)
+  const tiltRef = React.useRef<HTMLDivElement>(null)
+  const videoRef = React.useRef<HTMLVideoElement>(null)
+
+  const [selectedCategory, setSelectedCategory] = React.useState<RequestCategory>("senior_care")
+  const [quickNotes, setQuickNotes] = React.useState("")
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {})
+    }
+
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.pause()
+      }
+    }
+  }, [])
+
+  React.useEffect(() => {
+    const card = tiltRef.current
+    if (!card) return
+
+    let rafId: number | null = null
+    let targetRotateX = 0
+    let targetRotateY = 0
+
+    function updateTransform() {
+      if (card) {
+        card.style.transform = `perspective(1000px) rotateX(${targetRotateX}deg) rotateY(${targetRotateY}deg)`
+      }
+      rafId = null
+    }
+
+    function handleMouseMove(e: MouseEvent) {
+      if (!card) return
+      const rect = card.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      const centerX = rect.width / 2
+      const centerY = rect.height / 2
+      targetRotateX = ((y - centerY) / centerY) * -6
+      targetRotateY = ((x - centerX) / centerX) * 6
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateTransform)
+      }
+    }
+
+    function handleMouseLeave() {
+      if (!card) return
+      targetRotateX = 0
+      targetRotateY = 0
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateTransform)
+      }
+    }
+
+    card.addEventListener("mousemove", handleMouseMove, { passive: true })
+    card.addEventListener("mouseleave", handleMouseLeave, { passive: true })
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId)
+      card.removeEventListener("mousemove", handleMouseMove)
+      card.removeEventListener("mouseleave", handleMouseLeave)
+    }
+  }, [])
+
+  function handleStartRequest() {
+    const cat = quickCategories.find((c) => c.id === selectedCategory)
+    const title = quickNotes.trim() || cat?.defaultTitle || "Care Assistance Request"
+    if (onRequestCare) {
+      onRequestCare(selectedCategory, title)
+    } else {
+      navigate("create-request", { category: selectedCategory, title })
+    }
+  }
+
+  function handleScrollToServices() {
+    const el = document.getElementById("services")
+    if (el) {
+      const offsetPosition = el.getBoundingClientRect().top + window.pageYOffset - 70
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" })
+    }
+  }
+
+  return (
+    <section id="hero" className="relative flex min-h-svh items-center overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 bg-[#0F172A]">
+      <div className="absolute inset-0 z-0 overflow-hidden bg-[#0F172A]">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="size-full object-cover opacity-95 transition-opacity duration-700"
+          aria-hidden="true"
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/28 via-[#0F172A]/20 to-[#0F172A]/32" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/60 to-transparent pointer-events-none" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="flex flex-col gap-6 lg:col-span-7">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#06B6D4]/40 bg-[#0F172A]/85 backdrop-blur-md px-4 py-1.5 text-xs font-semibold text-[#06B6D4] shadow-lg shadow-black/40">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#06B6D4] opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-[#3B82F6]" />
+              </span>
+              <span>Dedicated Client Care Network • 100% Free First Visit</span>
+            </div>
+
+            <h1 className="text-4xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-5xl lg:text-6xl text-balance leading-[1.12] drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
+              Compassionate Care &amp; Daily Help,{" "}
+              <span className="bg-gradient-to-r from-[#3B82F6] via-[#06B6D4] to-[#60A5FA] bg-clip-text text-transparent">
+                Requested in Seconds.
+              </span>
+            </h1>
+
+            <p className="max-w-2xl text-lg text-[#F1F5F9] text-balance leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.85)] font-medium">
+              Find verified, background-checked local companions for senior care, daily grocery errands,
+              device tech setup, and clinic escorts. Monitored with live GPS safety and 24/7 emergency dispatch.
+            </p>
+
+            <div className="glass-card-elevated relative overflow-hidden rounded-3xl p-6 sm:p-7 border border-[#06B6D4]/30 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.08)] bg-[#1E293B]/95 backdrop-blur-2xl">
+              <div className="pointer-events-none absolute -top-12 left-1/4 h-24 w-1/2 rounded-full bg-[#3B82F6]/3 blur-2xl" />
+
+              <div className="flex items-center justify-between gap-2 pb-3.5 border-b border-white/[0.08] relative">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#06B6D4]">
+                  Step 1: Choose Your Needed Assistance
+                </span>
+                <span className="text-xs font-medium text-[#94A3B8] flex items-center gap-1">
+                  <span className="size-1.5 rounded-full bg-[#059669] animate-pulse" />
+                  Average Match: &lt; 15 mins
+                </span>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2 relative">
+                {quickCategories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => setSelectedCategory(cat.id)}
+                    className={`btn-tactile flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold cursor-pointer ${
+                      selectedCategory === cat.id
+                        ? "bg-[#3B82F6] text-[#F8FAFC] shadow-sm shadow-[#3B82F6]/15 font-bold border border-[#06B6D4]/40"
+                        : "border border-[#06B6D4]/15 bg-[#1E293B] text-[#94A3B8] hover:border-[#06B6D4]/40 hover:text-[#F8FAFC]"
+                    }`}
+                  >
+                    {cat.icon}
+                    <span>{cat.label}</span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="mt-4.5 flex flex-col gap-2.5 sm:flex-row relative">
+                <input
+                  type="text"
+                  placeholder="Describe your request (e.g. Grocery run, doctor walk)..."
+                  value={quickNotes}
+                  onChange={(e) => setQuickNotes(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handleStartRequest()
+                  }}
+                  className="flex-1 rounded-xl border border-[#06B6D4]/20 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/25 transition-all shadow-inner"
+                />
+
+                <Button
+                  size="lg"
+                  onClick={handleStartRequest}
+                  className="btn-tactile cursor-pointer gap-2 bg-[#3B82F6] hover:bg-[#2563EB] font-bold text-white shadow-sm shadow-[#3B82F6]/15 rounded-xl border border-[#06B6D4]/30"
+                >
+                  <span>Request Now</span>
+                  <ArrowRight className="size-4" />
+                </Button>
+              </div>
+
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3.5 border-t border-white/[0.08] text-xs text-[#94A3B8]">
+                {onOpenVoiceAssistant && (
+                  <button
+                    type="button"
+                    onClick={onOpenVoiceAssistant}
+                    className="flex cursor-pointer items-center gap-1.5 text-[#06B6D4] transition-colors hover:text-[#22D3EE] font-medium"
+                  >
+                    <Mic className="size-3.5 animate-pulse text-[#06B6D4]" />
+                    <span>Prefer speaking? Use 1-Tap Voice Request</span>
+                  </button>
+                )}
+
+                <button
+                  type="button"
+                  onClick={handleScrollToServices}
+                  className="cursor-pointer text-[#94A3B8] underline hover:text-[#F8FAFC] transition-colors"
+                >
+                  Explore all 5 care services &amp; pricing →
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#F8FAFC] drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
+                <CheckCircle2 className="size-4 text-[#059669] shrink-0" />
+                <span>100% Free First Visit</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#F8FAFC] drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
+                <CheckCircle2 className="size-4 text-[#3B82F6] shrink-0" />
+                <span>ID &amp; Background Checked</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#F8FAFC] drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
+                <CheckCircle2 className="size-4 text-[#EF4444] shrink-0" />
+                <span>24/7 Family SOS Telemetry</span>
+              </div>
+            </div>
+
+            {isClient ? (
+              <div className="pt-2 flex items-center gap-2 text-xs text-[#06B6D4] border-t border-white/[0.08]">
+                <ShieldCheck className="size-3.5 text-[#3B82F6] shrink-0" />
+                <span>Client Mode Active · Rapid Dispatch Ready</span>
+              </div>
+            ) : !user ? (
+              <div className="pt-2 text-xs text-[#94A3B8] border-t border-white/[0.08]">
+                <span>Looking to offer assistance as a helper? </span>
+                <button
+                  type="button"
+                  onClick={() => navigate("volunteer")}
+                  className="cursor-pointer font-bold text-[#3B82F6] underline decoration-[#3B82F6]/50 hover:text-[#06B6D4] hover:decoration-[#06B6D4]"
+                >
+                  Join as a Service Provider &rarr;
+                </button>
+              </div>
+            ) : null}
+          </div>
+
+          <div className="flex justify-center lg:col-span-5 lg:justify-end">
+            <div
+              ref={tiltRef}
+              className="w-full max-w-md rounded-3xl p-7 sm:p-8 transition-transform duration-200 ease-out will-change-transform border border-[#06B6D4]/25 bg-[#1E293B]/95 backdrop-blur-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+              style={{ transformStyle: "preserve-3d" }}
+            >
+              <div className="mb-6 flex items-center justify-between border-b border-white/[0.08] pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-xl bg-[#3B82F6]/15 text-[#06B6D4] border border-[#06B6D4]/25">
+                    <ShieldCheck className="size-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#F8FAFC]">Live Client Protection</h3>
+                    <p className="text-xs text-[#94A3B8]">Real-time companion dispatch</p>
+                  </div>
+                </div>
+                <span className="flex items-center gap-1.5 rounded-full bg-[#059669]/15 px-2.5 py-1 text-[11px] font-bold text-[#059669] border border-[#059669]/30">
+                  <span className="size-1.5 rounded-full bg-[#059669] animate-pulse" />
+                  Live
+                </span>
+              </div>
+
+              <div className="space-y-3.5">
+                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-3.5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex size-9 items-center justify-center rounded-lg bg-[#059669]/15 text-[#059669] border border-[#059669]/20">
+                      <Clock className="size-4.5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[#94A3B8] font-medium">Average Match Time</p>
+                      <p className="text-xs font-semibold text-[#F8FAFC]">Local helpers on standby</p>
+                    </div>
+                  </div>
+                  <span className="text-lg font-black text-[#F8FAFC]">&lt; 15 mins</span>
+                </div>
+
+                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-3.5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex size-9 items-center justify-center rounded-lg bg-[#3B82F6]/15 text-[#06B6D4] border border-[#06B6D4]/20">
+                      <Users className="size-4.5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[#94A3B8] font-medium">Vetted Helpers Nearby</p>
+                      <p className="text-xs font-semibold text-[#F8FAFC]">Identity &amp; police screened</p>
+                    </div>
+                  </div>
+                  <span className="text-lg font-black text-[#F8FAFC]">8,500+</span>
+                </div>
+
+                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-3.5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex size-9 items-center justify-center rounded-lg bg-[#3B82F6]/15 text-[#06B6D4] border border-[#06B6D4]/20">
+                      <HandHeart className="size-4.5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[#94A3B8] font-medium">Client Satisfaction</p>
+                      <p className="text-xs font-semibold text-[#F8FAFC]">50,000+ completed visits</p>
+                    </div>
+                  </div>
+                  <span className="text-lg font-black text-[#06B6D4]">99.8%</span>
+                </div>
+              </div>
+
+              <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/[0.08]">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={onOpenVideoModal}
+                  className="cursor-pointer gap-2 text-xs text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-white/5"
+                >
+                  <Play className="size-3.5 text-[#3B82F6]" />
+                  <span>See How Wanes Helps Families</span>
+                </Button>
+                <span className="text-[11px] text-[#94A3B8]">2 min video</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
