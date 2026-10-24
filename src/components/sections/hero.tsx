@@ -51,13 +51,23 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
   const [quickNotes, setQuickNotes] = React.useState("")
 
   React.useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {})
+    const video = videoRef.current
+    if (video) {
+      video.defaultMuted = true
+      video.muted = true
+      video.setAttribute("playsinline", "true")
+      video.setAttribute("webkit-playsinline", "true")
+      const playPromise = video.play()
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn("Mobile background video autoplay prevented by browser policy:", err)
+        })
+      }
     }
 
     return () => {
-      if (videoRef.current) {
-        videoRef.current.pause()
+      if (video) {
+        video.pause()
       }
     }
   }, [])
@@ -129,8 +139,8 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
   }
 
   return (
-    <section id="hero" className="relative flex min-h-svh items-center overflow-hidden pt-24 pb-14 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 bg-[#0F172A]">
-      <div className="absolute inset-0 z-0 overflow-hidden bg-[#0F172A]">
+    <section id="hero" className="relative flex min-h-svh w-full max-w-full items-center overflow-hidden pt-24 pb-14 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 bg-[#0F172A]">
+      <div className="absolute inset-0 z-0 w-full h-full max-w-full overflow-hidden pointer-events-none bg-[#0F172A]">
         <video
           ref={videoRef}
           autoPlay
@@ -138,12 +148,12 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
           muted
           playsInline
           preload="auto"
-          className="size-full object-cover opacity-95 transition-opacity duration-700"
+          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none opacity-95 transition-opacity duration-700 select-none"
           aria-hidden="true"
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/28 via-[#0F172A]/20 to-[#0F172A]/32" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/28 via-[#0F172A]/20 to-[#0F172A]/32 pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/60 to-transparent pointer-events-none" />
       </div>
 
