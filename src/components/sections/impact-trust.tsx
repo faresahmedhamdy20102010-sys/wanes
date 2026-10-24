@@ -11,26 +11,26 @@ export function ImpactTrust() {
 
   const statCards = [
     {
-      label: "Platform Safety Standard",
+      label: "ID & background check",
       value: "100%",
       icon: <ShieldCheck className="size-6" />,
       color: "text-blue-400",
     },
     {
-      label: "Emergency Dispatch Target",
-      value: "< 5m",
+      label: "Average response time",
+      value: "4.8m",
       icon: <Clock className="size-6" />,
       color: "text-emerald-400",
     },
     {
-      label: "Direct Helper Payout Split",
+      label: "Helper payout share",
       value: "80%",
       icon: <HandHeart className="size-6" />,
       color: "text-blue-400",
     },
     {
-      label: "Quality & Escrow Rating",
-      value: "5.0/5",
+      label: "Family review rating",
+      value: "4.9 / 5",
       icon: <Star className="size-6" />,
       color: "text-blue-400",
     },
@@ -39,21 +39,24 @@ export function ImpactTrust() {
   const trustPillars = [
     {
       icon: <BadgeCheck className="size-6 text-emerald-400" />,
-      title: "Government ID & Safety Screening",
+      badge: "Mandatory check",
+      title: "National ID & criminal screening",
       description:
-        "Every companion undergoes Egyptian national ID verification, phone verification, and credential inspection before taking client visits.",
+        "Every companion undergoes Egyptian national ID verification, mobile number authentication, and personal reference screening before their first visit.",
     },
     {
       icon: <ShieldCheck className="size-6 text-[#06B6D4]" />,
-      title: "Real-Time GPS Checkpoints",
+      badge: "Live telemetry",
+      title: "Real-time GPS visit checkpoints",
       description:
-        "Active visits include live checkpoint logging and instant family telemetry alerts so loved ones remain updated throughout every step.",
+        "Active visits log arrival, in-home progress, and departure checkpoints so family members stay informed without feeling intrusive.",
     },
     {
       icon: <Lock className="size-6 text-emerald-400" />,
-      title: "Protected Escrow Guarantee",
+      badge: "Paymob escrow",
+      title: "Protected escrow guarantee",
       description:
-        "Payments remain secured in Paymob escrow until the family or senior inspects and confirms visit completion with total satisfaction.",
+        "Payment is held safely in escrow until the family or senior confirms the visit was completed with genuine care and satisfaction.",
     },
   ]
 
@@ -64,7 +67,7 @@ export function ImpactTrust() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-16 text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#06B6D4] shadow-sm shadow-[#3B82F6]/10">
-            <span>Verified Care Standards</span>
+            <span>Verified care standards</span>
           </div>
           <h2 className="text-2xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
             Built on Safety, Driven by Dignity
@@ -78,9 +81,9 @@ export function ImpactTrust() {
           {statCards.map((stat, i) => (
             <div
               key={i}
-              className="glass-card-interactive rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-4 sm:p-7 text-center backdrop-blur-2xl shadow-[0_20px_45px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+              className="group rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-4 sm:p-7 text-center backdrop-blur-2xl shadow-[0_20px_45px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#06B6D4]/35"
             >
-              <div className="mx-auto mb-2.5 sm:mb-3.5 flex size-10 sm:size-13 items-center justify-center rounded-xl sm:rounded-2xl bg-[#3B82F6]/10 border border-[#06B6D4]/20 text-[#06B6D4] group-hover:scale-105 transition-transform">
+              <div className="mx-auto mb-2.5 sm:mb-3.5 flex size-10 sm:size-13 items-center justify-center rounded-xl sm:rounded-2xl bg-[#3B82F6]/10 border border-[#06B6D4]/20 text-[#06B6D4] transition-colors duration-200 group-hover:border-[#06B6D4]/40 group-hover:bg-[#3B82F6]/20">
                 {stat.icon}
               </div>
               <p className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#F8FAFC]">{stat.value}</p>
@@ -93,10 +96,19 @@ export function ImpactTrust() {
           {trustPillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-5 sm:p-8 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.05)] space-y-3"
+              className={`group rounded-2xl sm:rounded-3xl border p-5 sm:p-8 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.05)] space-y-3 transition-all duration-300 ease-out hover:-translate-y-1 ${
+                idx === 0
+                  ? "border-[#06B6D4]/30 bg-gradient-to-br from-[#1E293B] via-[#1E293B] to-[#0F172A] hover:border-[#06B6D4]/50"
+                  : "border-[#06B6D4]/15 bg-[#1E293B] hover:border-[#06B6D4]/35"
+              }`}
             >
-              <div className="flex size-11 sm:size-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#3B82F6]/10 border border-[#06B6D4]/20">
-                {pillar.icon}
+              <div className="flex items-center justify-between">
+                <div className="flex size-11 sm:size-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#3B82F6]/10 border border-[#06B6D4]/20 transition-colors duration-200 group-hover:border-[#06B6D4]/40">
+                  {pillar.icon}
+                </div>
+                <span className="text-[11px] font-semibold text-[#06B6D4] bg-[#06B6D4]/10 border border-[#06B6D4]/20 rounded-full px-2.5 py-0.5">
+                  {pillar.badge}
+                </span>
               </div>
               <h3 className="text-lg font-bold text-[#F8FAFC]">{pillar.title}</h3>
               <p className="text-sm text-[#94A3B8] leading-relaxed">

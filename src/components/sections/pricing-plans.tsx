@@ -1,9 +1,7 @@
 import * as React from "react"
 import {
   Check,
-  Sparkles,
   ShieldAlert,
-  Zap,
   ArrowRight,
   ShieldCheck,
   Lock,
@@ -13,6 +11,7 @@ import {
   HeartHandshake,
   Users,
   Coins,
+  Clock,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
@@ -160,8 +159,8 @@ export function PricingPlans() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/40 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#60A5FA] shadow-sm shadow-[#3B82F6]/20">
-            <Sparkles className="size-3.5 text-[#3B82F6]" />
-            Transparent Membership &amp; Pricing
+            <ShieldCheck className="size-3.5 text-[#3B82F6]" />
+            Transparent membership &amp; pricing
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
@@ -268,11 +267,11 @@ export function PricingPlans() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 sm:gap-6 relative">
             <div className="space-y-3 max-w-2xl">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/20 px-3 py-1 text-xs font-bold text-amber-300">
-                  <Zap className="size-3.5 fill-amber-300" />
-                  Real-Time On-Demand Instant Service
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/20 px-3 py-1 text-xs font-semibold text-amber-300">
+                  <Clock className="size-3.5" />
+                  On-demand instant service
                 </span>
-                <span className="text-xs text-[#94A3B8]">· Sub-5 Min Algorithmic Dispatch</span>
+                <span className="text-xs text-[#94A3B8]">· Rapid neighborhood dispatch under 5 mins</span>
               </div>
               <h4 className="text-xl sm:text-3xl font-extrabold tracking-tight text-white">
                 Need Care Right Now? <span className="text-amber-400">$25 Instant On-Demand Dispatch</span>
@@ -283,15 +282,15 @@ export function PricingPlans() {
               <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 text-xs text-[#F8FAFC]">
                 <div className="flex items-center gap-1.5">
                   <Check className="size-4 text-emerald-400 shrink-0" />
-                  <span><strong>$20.00</strong> Net Helper Payout (80%)</span>
+                  <span><strong>$20.00</strong> Net helper payout (80%)</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Check className="size-4 text-blue-400 shrink-0" />
-                  <span><strong>$5.00</strong> Platform Safety Fee (20%)</span>
+                  <span><strong>$5.00</strong> Platform safety fee (20%)</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Check className="size-4 text-amber-400 shrink-0" />
-                  <span>Instant GPS Radar Telemetry</span>
+                  <span>Live GPS visit checkpoints</span>
                 </div>
               </div>
             </div>
@@ -301,7 +300,7 @@ export function PricingPlans() {
                 <div className="text-3xl sm:text-4xl font-black text-white">
                   $25 <span className="text-xs font-normal text-amber-400">/ instant visit</span>
                 </div>
-                <p className="text-[11px] text-[#94A3B8]">Immediate Real-Time Dispatch</p>
+                <p className="text-[11px] text-[#94A3B8]">Immediate neighborhood dispatch</p>
               </div>
               <Button
                 type="button"
@@ -309,10 +308,10 @@ export function PricingPlans() {
                   navigate("create-request")
                   toast.info("Configuring On-Demand Instant Dispatch ($25 rate).")
                 }}
-                className="h-11 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 text-xs sm:text-sm rounded-xl gap-2 shadow-lg shadow-amber-500/25 cursor-pointer transition-all hover:scale-[1.02] w-full sm:w-auto justify-center"
+                className="h-11 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 text-xs sm:text-sm rounded-xl gap-2 shadow-lg shadow-amber-500/25 cursor-pointer transition-all active:scale-[0.99] w-full sm:w-auto justify-center"
               >
-                <Zap className="size-4 fill-slate-950" />
-                Request Instant On-Demand ($25)
+                <span>Request Instant On-Demand ($25)</span>
+                <ArrowRight className="size-4" />
               </Button>
             </div>
           </div>
@@ -337,14 +336,14 @@ export function PricingPlans() {
                 key={tier.id}
                 className={`relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-9 backdrop-blur-2xl transition-all duration-300 ${
                   isHighlighted
-                    ? "border-2 border-[#3B82F6] bg-[#1E293B] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_30px_-5px_rgba(59,130,246,0.3),inset_0_1px_0_0_rgba(255,255,255,0.12)] lg:-translate-y-2.5 scale-[1.02]"
+                    ? "border-2 border-[#3B82F6] bg-[#1E293B] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_30px_-5px_rgba(59,130,246,0.3),inset_0_1px_0_0_rgba(255,255,255,0.12)] lg:-translate-y-2.5"
                     : "glass-card-interactive border border-white/[0.08] bg-[#1E293B]/85 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] hover:border-[#3B82F6]/30"
                 }`}
               >
                 {isHighlighted && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-[#3B82F6] px-4 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-md shadow-[#3B82F6]/30 border border-[#60A5FA]/50">
-                      <Zap className="size-3 fill-white stroke-none" />
+                      <Check className="size-3 stroke-[2.5]" />
                       {tier.badge}
                     </span>
                   </div>

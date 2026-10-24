@@ -173,7 +173,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#06B6D4] opacity-75" />
                 <span className="relative inline-flex size-2 rounded-full bg-[#3B82F6]" />
               </span>
-              <span className="truncate">Dedicated Client Care Network • 100% Free First Visit</span>
+              <span className="truncate">Verified neighborhood care network · Free first visit</span>
             </div>
 
             <h1 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-5xl lg:text-6xl text-balance leading-[1.15] sm:leading-[1.12] drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
@@ -193,11 +193,11 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 pb-3 sm:pb-3.5 border-b border-white/[0.08] relative">
                 <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#06B6D4]">
-                  Step 1: Choose Your Needed Assistance
+                  Step 1: Choose needed assistance
                 </span>
                 <span className="text-[11px] sm:text-xs font-medium text-[#94A3B8] flex items-center gap-1">
                   <span className="size-1.5 rounded-full bg-[#059669] animate-pulse" />
-                  Average Match: &lt; 15 mins
+                  Average match under 15 mins
                 </span>
               </div>
 
@@ -249,7 +249,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                     className="flex cursor-pointer items-center gap-1.5 text-[#06B6D4] transition-colors hover:text-[#22D3EE] font-medium"
                   >
                     <Mic className="size-3.5 animate-pulse text-[#06B6D4]" />
-                    <span>Prefer speaking? Use 1-Tap Voice Request</span>
+                    <span>Prefer speaking? Try voice request</span>
                   </button>
                 )}
 
@@ -266,22 +266,22 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
               <div className="flex items-center gap-2 text-xs font-semibold text-[#F8FAFC] drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
                 <CheckCircle2 className="size-4 text-[#059669] shrink-0" />
-                <span>100% Free First Visit</span>
+                <span>Free first visit</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-[#F8FAFC] drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
                 <CheckCircle2 className="size-4 text-[#3B82F6] shrink-0" />
-                <span>ID &amp; Background Checked</span>
+                <span>ID &amp; background verified</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-[#F8FAFC] drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
                 <CheckCircle2 className="size-4 text-[#EF4444] shrink-0" />
-                <span>24/7 Family SOS Telemetry</span>
+                <span>24/7 family safety alerts</span>
               </div>
             </div>
 
             {isClient ? (
               <div className="pt-2 flex items-center gap-2 text-xs text-[#06B6D4] border-t border-white/[0.08]">
                 <ShieldCheck className="size-3.5 text-[#3B82F6] shrink-0" />
-                <span>Client Mode Active · Rapid Dispatch Ready</span>
+                <span>Client mode active · Care dispatch ready</span>
               </div>
             ) : !user ? (
               <div className="pt-2 text-xs text-[#94A3B8] border-t border-white/[0.08]">
@@ -309,7 +309,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                     <ShieldCheck className="size-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#F8FAFC]">Live Client Protection</h3>
+                    <h3 className="font-bold text-[#F8FAFC]">Live care protection</h3>
                     <p className="text-xs text-[#94A3B8]">Real-time companion dispatch</p>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                       <Clock className="size-4.5" />
                     </div>
                     <div>
-                      <p className="text-xs text-[#94A3B8] font-medium">Average Match Time</p>
+                      <p className="text-xs text-[#94A3B8] font-medium">Average response time</p>
                       <p className="text-xs font-semibold text-[#F8FAFC]">Local helpers on standby</p>
                     </div>
                   </div>
@@ -339,11 +339,11 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                       <Users className="size-4.5" />
                     </div>
                     <div>
-                      <p className="text-xs text-[#94A3B8] font-medium">Vetted Helpers Nearby</p>
-                      <p className="text-xs font-semibold text-[#F8FAFC]">Identity &amp; police screened</p>
+                      <p className="text-xs text-[#94A3B8] font-medium">Verified local helpers</p>
+                      <p className="text-xs font-semibold text-[#F8FAFC]">Cairo &amp; Giza neighborhood coverage</p>
                     </div>
                   </div>
-                  <span className="text-lg font-black text-[#F8FAFC]">8,500+</span>
+                  <span className="text-lg font-black text-[#F8FAFC]">450+</span>
                 </div>
 
                 <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-3.5">
@@ -352,11 +352,11 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                       <HandHeart className="size-4.5" />
                     </div>
                     <div>
-                      <p className="text-xs text-[#94A3B8] font-medium">Client Satisfaction</p>
-                      <p className="text-xs font-semibold text-[#F8FAFC]">50,000+ completed visits</p>
+                      <p className="text-xs text-[#94A3B8] font-medium">Family satisfaction</p>
+                      <p className="text-xs font-semibold text-[#F8FAFC]">3,200+ completed visits</p>
                     </div>
                   </div>
-                  <span className="text-lg font-black text-[#06B6D4]">99.8%</span>
+                  <span className="text-lg font-black text-[#06B6D4]">4.9 / 5</span>
                 </div>
               </div>
 
@@ -368,7 +368,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                   className="cursor-pointer gap-2 text-xs text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-white/5"
                 >
                   <Play className="size-3.5 text-[#3B82F6]" />
-                  <span>See How Wanes Helps Families</span>
+                  <span>See how Wanes helps families</span>
                 </Button>
                 <span className="text-[11px] text-[#94A3B8]">2 min video</span>
               </div>

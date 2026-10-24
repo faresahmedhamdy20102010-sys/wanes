@@ -4,7 +4,7 @@ import {
   Users,
   Navigation,
   Headphones,
-  Zap,
+  BellRing,
   Check,
   RotateCcw,
   Play,
@@ -64,10 +64,10 @@ type GuideStep = {
 const guideSteps: GuideStep[] = [
   {
     num: "01",
-    title: "One-tap SOS trigger",
+    title: "One-tap emergency trigger",
     description: "A single press flags an emergency — no menus, no dialing.",
-    detail: "Immediate hardware-accelerated trigger locks in location and priority queue.",
-    icon: Zap,
+    detail: "Holding for 3 seconds locks in GPS coordinates and alerts priority responders.",
+    icon: BellRing,
   },
   {
     num: "02",
@@ -123,18 +123,18 @@ export function SosSection() {
         <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-16 space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#EF4444]/30 bg-[#EF4444]/10 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#EF4444] shadow-sm shadow-[#EF4444]/10">
             <ShieldAlert className="size-3.5 text-[#EF4444]" />
-            <span>Dedicated Rapid Safety Architecture</span>
+            <span>Emergency response &amp; family alerts</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F8FAFC]">
-            Guarded Emergency Response,{" "}
+            Immediate Emergency Help,{" "}
             <span className="bg-gradient-to-r from-[#EF4444] via-[#F87171] to-[#EF4444] bg-clip-text text-transparent">
-              Built for Absolute Peace of Mind
+              When Seconds Count
             </span>
           </h2>
 
           <p className="text-sm sm:text-lg text-[#94A3B8] leading-relaxed text-balance">
-            Every interaction is fortified by real-time safety telemetry. A protected 3-second hold prevents accidental activations while instantly connecting your family to verified nearby helpers and our 24/7 dispatch desk.
+            Every visit includes safety oversight. A 3-second hold prevents accidental taps while immediately notifying your family, verified neighborhood responders, and our 24/7 care coordination desk.
           </p>
         </div>
 

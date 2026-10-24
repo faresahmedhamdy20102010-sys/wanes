@@ -8,7 +8,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ShieldCheck,
-  Sparkles,
+  HeartHandshake,
   Search,
 } from "lucide-react"
 import { type RequestCategory } from "@/lib/supabase"
@@ -39,9 +39,9 @@ const serviceItems: ServiceItem[] = [
     tagline: "Warm, respectful presence and attentive daily support",
     description:
       "Friendly in-home visits, heartfelt conversation, puzzle solving, reading sessions, and gentle reminders to keep your loved ones active, happy, and connected.",
-    badgeText: "Most Requested",
+    badgeText: "Most requested",
     badgeColor: "bg-[#3B82F6]/15 text-[#06B6D4] border-[#06B6D4]/30",
-    priceText: "Free 1st Visit • Then $15/hr",
+    priceText: "Free 1st visit · Then $15/hr",
     icon: <Heart className="size-6 text-[#3B82F6]" />,
     iconBg: "bg-[#3B82F6]/10 border-[#06B6D4]/20",
     features: [
@@ -55,12 +55,12 @@ const serviceItems: ServiceItem[] = [
   {
     id: "daily_errands",
     title: "Daily Errands & Grocery Runs",
-    tagline: "Reliable local runs so you never have to worry",
+    tagline: "Reliable neighborhood help for groceries and pickups",
     description:
       "Handled by vetted local helpers: supermarket grocery lists, prescription pickups from your neighborhood pharmacy, post office drop-offs, and heavy deliveries.",
-    badgeText: "Same-Day Dispatch",
+    badgeText: "Same-day dispatch",
     badgeColor: "bg-[#059669]/15 text-[#34D399] border-[#059669]/30",
-    priceText: "Community Rate • $12 - $18 / trip",
+    priceText: "Community rate · $12 - $18 / trip",
     icon: <ShoppingBag className="size-6 text-[#059669]" />,
     iconBg: "bg-[#059669]/10 border-[#059669]/20",
     features: [
@@ -74,12 +74,12 @@ const serviceItems: ServiceItem[] = [
   {
     id: "tech_setup",
     title: "Patient Tech & Digital Setup",
-    tagline: "Friendly tech guidance with zero jargon",
+    tagline: "Patient, step-by-step tech help with zero jargon",
     description:
       "Patient youth helpers who explain things calmly. Learn to video-call your children, send audio notes, set up new iPads/phones, and stay safe from online scams.",
-    badgeText: "100% Free For Seniors",
+    badgeText: "Free for seniors",
     badgeColor: "bg-[#3B82F6]/15 text-[#06B6D4] border-[#06B6D4]/30",
-    priceText: "Free Community Service",
+    priceText: "Free community service",
     icon: <Smartphone className="size-6 text-[#3B82F6]" />,
     iconBg: "bg-[#3B82F6]/10 border-[#06B6D4]/20",
     features: [
@@ -93,12 +93,12 @@ const serviceItems: ServiceItem[] = [
   {
     id: "mobility_assistance",
     title: "Safe Mobility & Clinic Escort",
-    tagline: "Dependable arm support and transportation accompaniment",
+    tagline: "Gentle arm support and transportation accompaniment",
     description:
       "Gentle, respectful escort for hospital appointments, diagnostic clinics, community prayer, park walks, and social outings with full wheelchair coordination.",
-    badgeText: "Door-to-Door Care",
+    badgeText: "Door-to-door escort",
     badgeColor: "bg-[#3B82F6]/15 text-[#06B6D4] border-[#06B6D4]/30",
-    priceText: "Safe Accompaniment • $16/hr",
+    priceText: "Safe accompaniment · $16/hr",
     icon: <Accessibility className="size-6 text-[#06B6D4]" />,
     iconBg: "bg-[#3B82F6]/10 border-[#06B6D4]/20",
     features: [
@@ -112,19 +112,19 @@ const serviceItems: ServiceItem[] = [
   {
     id: "emergency_sos",
     title: "Urgent & Rapid SOS Response",
-    tagline: "High-priority broadcast for time-sensitive needs",
+    tagline: "Immediate response for time-sensitive family needs",
     description:
       "When unexpected situations arise—urgent medication needs, sudden distress, or an immediate welfare check—our network triggers immediate priority dispatch.",
-    badgeText: "< 15 Min Priority",
+    badgeText: "Priority dispatch",
     badgeColor: "bg-[#EF4444]/20 text-[#EF4444] border-[#EF4444]/40",
-    priceText: "Immediate Priority",
+    priceText: "Immediate priority",
     icon: <AlertCircle className="size-6 text-[#EF4444]" />,
     iconBg: "bg-[#EF4444]/10 border-[#EF4444]/20",
     features: [
       "Instant push notification to nearest vetted helpers",
       "Live GPS coordinates linked directly to dispatch desk",
       "Automatic SMS notification to emergency family contacts",
-      "Direct backup hotline connection: +1 (800) 555-WANES",
+      "Direct backup hotline connection: +20 2 3345 9263",
     ],
     defaultTitle: "Urgent Assistance & Welfare Check",
   },
@@ -154,8 +154,8 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
       <div className="mx-auto max-w-7xl">
         <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#06B6D4] shadow-sm shadow-[#3B82F6]/10">
-            <Sparkles className="size-3.5 text-[#06B6D4]" />
-            <span>Curated Care Offerings</span>
+            <HeartHandshake className="size-3.5 text-[#06B6D4]" />
+            <span>Everyday care &amp; companionship</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F8FAFC]">
@@ -209,65 +209,70 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
         </div>
 
         <div className="mt-8 sm:mt-12 grid gap-5 sm:gap-7 md:grid-cols-2 lg:grid-cols-3">
-          {filteredServices.map((service) => (
-            <div
-              key={service.id}
-              className="glass-card-interactive group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-5 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
-            >
-              <div>
-                <div className="flex items-start justify-between gap-3">
-                  <div className={`flex size-12 items-center justify-center rounded-2xl border ${service.iconBg} group-hover:scale-105 transition-transform`}>
-                    {service.icon}
+          {filteredServices.map((service, index) => {
+            const isFeatured = selectedFilter === "all" && index === 0
+            return (
+              <div
+                key={service.id}
+                className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-5 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#06B6D4]/40 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)] ${
+                  isFeatured ? "md:col-span-2 lg:col-span-2 border-[#3B82F6]/40 bg-gradient-to-br from-[#1E293B] via-[#1E293B] to-[#0F172A]" : ""
+                }`}
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-3">
+                    <div className={`flex size-12 items-center justify-center rounded-2xl border ${service.iconBg} transition-colors duration-200 group-hover:border-[#06B6D4]/40`}>
+                      {service.icon}
+                    </div>
+                    <div className="flex flex-col items-end gap-1.5">
+                      <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${service.badgeColor}`}>
+                        {service.badgeText}
+                      </span>
+                      <span className="text-xs font-semibold text-[#94A3B8]">
+                        {service.priceText}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex flex-col items-end gap-1.5">
-                    <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider ${service.badgeColor}`}>
-                      {service.badgeText}
-                    </span>
-                    <span className="text-xs font-semibold text-[#94A3B8]">
-                      {service.priceText}
-                    </span>
+
+                  <div className="mt-6 space-y-1">
+                    <h3 className="text-xl font-bold tracking-tight text-[#F8FAFC] group-hover:text-[#06B6D4] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-xs font-semibold text-[#06B6D4]">
+                      {service.tagline}
+                    </p>
+                  </div>
+
+                  <p className="mt-3.5 text-sm leading-relaxed text-[#94A3B8]">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-6 space-y-2 border-t border-white/[0.08] pt-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-[#94A3B8]">
+                      What's included:
+                    </p>
+                    <ul className={`space-y-2 ${isFeatured ? "sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-2 sm:space-y-0" : ""}`}>
+                      {service.features.map((feat, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-xs text-[#F8FAFC]">
+                          <CheckCircle2 className="size-3.5 shrink-0 text-[#059669] mt-0.5" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
-                <div className="mt-6 space-y-1">
-                  <h3 className="text-xl font-bold tracking-tight text-[#F8FAFC] group-hover:text-[#06B6D4] transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs font-semibold text-[#06B6D4]">
-                    {service.tagline}
-                  </p>
-                </div>
-
-                <p className="mt-3.5 text-sm leading-relaxed text-[#94A3B8]">
-                  {service.description}
-                </p>
-
-                <div className="mt-6 space-y-2 border-t border-white/[0.08] pt-5">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8]">
-                    What's Included:
-                  </p>
-                  <ul className="space-y-2">
-                    {service.features.map((feat, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-xs text-[#F8FAFC]">
-                        <CheckCircle2 className="size-3.5 shrink-0 text-[#059669] mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="mt-7 pt-5 border-t border-white/[0.08]">
+                  <Button
+                    onClick={() => onRequestService(service.id, service.defaultTitle)}
+                    className="btn-tactile w-full cursor-pointer justify-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] font-bold text-white shadow-sm shadow-[#3B82F6]/15 transition-all rounded-xl py-2.5 border border-[#06B6D4]/30"
+                  >
+                    <span>Request This Service</span>
+                    <ArrowRight className="size-4" />
+                  </Button>
                 </div>
               </div>
-
-              <div className="mt-7 pt-5 border-t border-white/[0.08]">
-                <Button
-                  onClick={() => onRequestService(service.id, service.defaultTitle)}
-                  className="btn-tactile w-full cursor-pointer justify-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] font-bold text-white shadow-sm shadow-[#3B82F6]/15 transition-all rounded-xl py-2.5 border border-[#06B6D4]/30"
-                >
-                  <span>Request This Service</span>
-                  <ArrowRight className="size-4" />
-                </Button>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="mt-10 sm:mt-14 rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-5 sm:p-10 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.06)]">

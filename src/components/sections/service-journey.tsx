@@ -3,11 +3,10 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
   ClipboardList,
-  Brain,
+  UserCheck,
   ShieldAlert,
   Award,
   CheckCircle2,
-  Sparkles,
   ArrowDownCircle,
   Clock,
   ShieldCheck,
@@ -29,42 +28,42 @@ const steps: JourneyStep[] = [
   {
     num: "01",
     title: "Request Assistance",
-    subtitle: "Simple, Accessible Intake",
+    subtitle: "Simple, accessible intake",
     description:
       "Post your needed assistance in under 60 seconds using our one-tap form, voice input, or phone hotline. Choose companion preferences, urgency, and specific instructions.",
     icon: <ClipboardList className="size-6" />,
-    badge: "Fast Intake",
-    highlights: ["Voice & One-Tap Input", "Senior Accessibility Mode", "Custom Urgency Levels"],
+    badge: "Fast intake",
+    highlights: ["Voice & one-tap input", "Senior accessibility mode", "Custom urgency levels"],
   },
   {
     num: "02",
     title: "Vetted Companion Match",
-    subtitle: "Local Screening & Fast Dispatch",
+    subtitle: "Local screening and fast dispatch",
     description:
       "Our system pairs your request with verified, background-checked local helpers in your immediate neighborhood within 15 minutes.",
-    icon: <Brain className="size-6" />,
-    badge: "Neighborhood Match",
-    highlights: ["100% Background-Checked", "Local Proximity Dispatch", "Transparent Helper Profiles"],
+    icon: <UserCheck className="size-6" />,
+    badge: "Neighborhood match",
+    highlights: ["National ID & reference checked", "Local proximity matching", "Transparent helper profiles"],
   },
   {
     num: "03",
     title: "Live Monitored Care",
-    subtitle: "Real-Time Telemetry & SOS Protection",
+    subtitle: "Real-time updates and emergency support",
     description:
       "Stay informed with real-time arrival updates, live check-ins, and direct family status notifications with instant emergency SOS protection.",
     icon: <ShieldAlert className="size-6" />,
-    badge: "Family Peace of Mind",
-    highlights: ["Real-time GPS Tracking", "1-Tap Emergency SOS", "Instant Family Updates"],
+    badge: "Family peace of mind",
+    highlights: ["Real-time GPS tracking", "1-tap emergency alert", "Instant family SMS updates"],
   },
   {
     num: "04",
     title: "Care Confirmed & Protected Pay",
-    subtitle: "Satisfaction Guarantee & Free First Visit",
+    subtitle: "Satisfaction guarantee and free first visit",
     description:
-      "Confirm your satisfaction only after the visit is happily completed. Enjoy a 100% free first visit, protected payments, and zero surprise fees.",
+      "Confirm your satisfaction only after the visit is happily completed. Enjoy a free first visit, protected payments, and zero surprise fees.",
     icon: <Award className="size-6" />,
-    badge: "Guaranteed Satisfaction",
-    highlights: ["100% Free First Visit", "Protected Escrow Payment", "Direct Support Hotline"],
+    badge: "Satisfaction guarantee",
+    highlights: ["Free first visit", "Protected escrow payout", "Direct telephone support"],
   },
 ]
 
@@ -125,8 +124,8 @@ export function ServiceJourney() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center sm:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold text-[#06B6D4] uppercase tracking-wider">
-            <Sparkles className="size-3.5" />
-            Simple 4-Step Client Journey
+            <CheckCircle2 className="size-3.5" />
+            Care journey overview
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
             How Requesting Care Works
