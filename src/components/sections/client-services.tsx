@@ -147,32 +147,32 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
   }, [selectedFilter, searchQuery])
 
   return (
-    <section id="services" className="relative scroll-mt-24 overflow-hidden bg-[#0F172A] py-28 sm:py-36 px-4 sm:px-6 lg:px-8">
+    <section id="services" className="relative scroll-mt-24 overflow-hidden bg-[#0F172A] py-16 sm:py-32 px-4 sm:px-6 lg:px-8">
       <div className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-96 w-full max-w-7xl -translate-x-1/2 opacity-5 blur-[140px] bg-[#3B82F6]/10" />
       <div className="pointer-events-none absolute -bottom-40 right-10 -z-10 size-96 opacity-4 blur-[130px] bg-[#06B6D4]/10" />
 
       <div className="mx-auto max-w-7xl">
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#06B6D4] shadow-sm shadow-[#3B82F6]/10">
+        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#06B6D4] shadow-sm shadow-[#3B82F6]/10">
             <Sparkles className="size-3.5 text-[#06B6D4]" />
             <span>Curated Care Offerings</span>
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F8FAFC]">
             Compassionate Support, Tailored to You
           </h2>
 
-          <p className="text-base text-[#94A3B8] sm:text-lg leading-relaxed text-balance">
+          <p className="text-sm sm:text-lg text-[#94A3B8] leading-relaxed text-balance">
             Select any category below to request immediate assistance. Each visit is fulfilled by an identity-screened companion with live GPS tracking and 24/7 safety oversight.
           </p>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between max-w-4xl mx-auto">
-          <div className="flex flex-wrap items-center gap-2 justify-center sm:justify-start">
+        <div className="mt-8 sm:mt-12 flex flex-col gap-3.5 sm:flex-row sm:items-center sm:justify-between max-w-4xl mx-auto">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 justify-center sm:justify-start">
             <button
               type="button"
               onClick={() => setSelectedFilter("all")}
-              className={`rounded-full px-4 py-2 text-xs font-semibold transition-all cursor-pointer ${
+              className={`rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold transition-all cursor-pointer ${
                 selectedFilter === "all"
                   ? "bg-[#3B82F6] text-[#F8FAFC] shadow-sm shadow-[#3B82F6]/15 font-bold border border-[#06B6D4]/30"
                   : "border border-[#06B6D4]/15 bg-[#1E293B] text-[#94A3B8] hover:border-[#06B6D4]/30 hover:text-[#F8FAFC]"
@@ -185,7 +185,7 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
                 key={s.id}
                 type="button"
                 onClick={() => setSelectedFilter(s.id)}
-                className={`rounded-full px-3.5 py-2 text-xs font-semibold transition-all cursor-pointer ${
+                className={`rounded-full px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs font-semibold transition-all cursor-pointer ${
                   selectedFilter === s.id
                     ? "bg-[#3B82F6] text-[#F8FAFC] shadow-sm shadow-[#3B82F6]/15 font-bold border border-[#06B6D4]/30"
                     : "border border-[#06B6D4]/15 bg-[#1E293B] text-[#94A3B8] hover:border-[#06B6D4]/30 hover:text-[#F8FAFC]"
@@ -196,7 +196,7 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
             ))}
           </div>
 
-          <div className="relative min-w-[240px]">
+          <div className="relative w-full sm:w-auto sm:min-w-[240px]">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#94A3B8]" />
             <input
               type="text"
@@ -208,11 +208,11 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
           </div>
         </div>
 
-        <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 sm:mt-12 grid gap-5 sm:gap-7 md:grid-cols-2 lg:grid-cols-3">
           {filteredServices.map((service) => (
             <div
               key={service.id}
-              className="glass-card-interactive group relative flex flex-col justify-between rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-7 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+              className="glass-card-interactive group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-5 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
             >
               <div>
                 <div className="flex items-start justify-between gap-3">
@@ -270,7 +270,7 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
           ))}
         </div>
 
-        <div className="mt-14 rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-8 sm:p-10 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+        <div className="mt-10 sm:mt-14 rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-5 sm:p-10 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.06)]">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center sm:text-left">
               <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#06B6D4] uppercase tracking-wider">
@@ -288,7 +288,7 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
             <Button
               size="lg"
               onClick={() => onRequestService("daily_errands", "Custom Family Care Request")}
-              className="cursor-pointer shrink-0 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold px-6 py-3 rounded-xl shadow-sm shadow-[#3B82F6]/15 border border-[#06B6D4]/30 transition-all active:scale-[0.98]"
+              className="cursor-pointer w-full sm:w-auto shrink-0 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold px-6 py-3 rounded-xl shadow-sm shadow-[#3B82F6]/15 border border-[#06B6D4]/30 transition-all active:scale-[0.98] justify-center"
             >
               <span>Post Custom Request</span>
               <ArrowRight className="size-4 ml-1.5" />

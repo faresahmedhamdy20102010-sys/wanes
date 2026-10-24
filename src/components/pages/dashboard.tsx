@@ -840,14 +840,14 @@ export function DashboardPage() {
 
           <div className="flex items-center gap-2.5">
             {isClient ? (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#059669]/30 bg-[#059669]/10 px-3 py-1 text-xs font-semibold text-[#059669]">
+              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-[#059669]/30 bg-[#059669]/10 px-3 py-1 text-xs font-semibold text-[#059669]">
                 <ShieldCheck className="size-3.5 text-[#059669]" />
                 <span>{isSenior ? "Senior Requester" : "Client Portal"}</span>
                 <span className="text-[#059669]/70 font-normal hidden md:inline">· Escrow Protected</span>
               </span>
             ) : (
               <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#3B82F6]/30 bg-[#3B82F6]/10 px-3 py-1 text-xs font-semibold text-[#3B82F6]">
+                <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-[#3B82F6]/30 bg-[#3B82F6]/10 px-3 py-1 text-xs font-semibold text-[#3B82F6]">
                   {isCompanion ? (
                     <Coins className="size-3.5 text-[#3B82F6]" />
                   ) : (

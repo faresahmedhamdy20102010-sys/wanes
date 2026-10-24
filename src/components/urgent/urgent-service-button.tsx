@@ -241,8 +241,8 @@ export function UrgentServiceButton() {
   return (
     <>
       <div
-        className={`fixed bottom-5 sm:bottom-6 ${
-          route === "dashboard" ? "left-4 sm:left-6 lg:left-[19.5rem]" : "left-4 sm:left-6"
+        className={`fixed bottom-4 sm:bottom-6 ${
+          route === "dashboard" ? "left-3 sm:left-6 lg:left-[19.5rem]" : "left-3 sm:left-6"
         } z-40 flex items-center transition-all duration-300 ${
           open ? "opacity-0 pointer-events-none scale-95" : "opacity-100 scale-100"
         }`}
@@ -250,13 +250,13 @@ export function UrgentServiceButton() {
         <button
           type="button"
           onClick={handleOpenModal}
-          className="group relative flex items-center gap-2.5 sm:gap-3 rounded-full bg-gradient-to-r from-[#EF4444] via-[#DC2626] to-[#B91C1C] py-2.5 pl-3.5 pr-4 sm:py-3 sm:pl-4 sm:pr-5 text-white shadow-[0_10px_35px_-5px_rgba(239,68,68,0.5),0_0_20px_rgba(239,68,68,0.25)] border border-white/20 transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_14px_45px_-5px_rgba(239,68,68,0.7),0_0_25px_rgba(239,68,68,0.4)] active:scale-[0.97] cursor-pointer focus:outline-none backdrop-blur-md"
+          className="group relative flex items-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-[#EF4444] via-[#DC2626] to-[#B91C1C] py-2 pl-3 pr-3.5 sm:py-3 sm:pl-4 sm:pr-5 text-white shadow-[0_10px_35px_-5px_rgba(239,68,68,0.5),0_0_20px_rgba(239,68,68,0.25)] border border-white/20 transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_14px_45px_-5px_rgba(239,68,68,0.7),0_0_25px_rgba(239,68,68,0.4)] active:scale-[0.97] cursor-pointer focus:outline-none backdrop-blur-md"
           title="Open Urgent Fast-Track Service Flow"
           aria-label="Request Urgent Service"
         >
-          <div className="relative flex size-8 sm:size-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md shadow-inner group-hover:scale-110 transition-transform">
+          <div className="relative flex size-7 sm:size-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md shadow-inner group-hover:scale-110 transition-transform">
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-red-400 opacity-60" />
-            <Zap className="size-4 sm:size-5 fill-white text-white animate-pulse" />
+            <Zap className="size-3.5 sm:size-5 fill-white text-white animate-pulse" />
           </div>
 
           <div className="flex flex-col text-left">
@@ -277,12 +277,12 @@ export function UrgentServiceButton() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-xl border-[#EF4444]/30 bg-[#1E293B] p-0 text-[#F8FAFC] backdrop-blur-2xl shadow-2xl sm:rounded-3xl overflow-hidden">
+        <DialogContent className="max-w-xl max-h-[calc(100svh-2rem)] overflow-y-auto border-[#EF4444]/30 bg-[#1E293B] p-0 text-[#F8FAFC] backdrop-blur-2xl shadow-2xl sm:rounded-3xl">
           <div className="pointer-events-none absolute -left-20 -top-20 size-72 rounded-full bg-[#EF4444]/15 blur-[100px]" />
           <div className="pointer-events-none absolute -right-20 -bottom-20 size-72 rounded-full bg-[#EF4444]/10 blur-[100px]" />
 
-          <div className="border-b border-white/[0.08] p-6 sm:p-7 relative">
-            <div className="flex items-center gap-2.5 mb-2">
+          <div className="border-b border-white/[0.08] p-4 sm:p-7 relative">
+            <div className="flex items-center gap-2 mb-2">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[#EF4444]/30 bg-[#EF4444]/15 px-3 py-1 text-xs font-bold text-[#EF4444]">
                 <Zap className="size-3.5 fill-[#EF4444] text-[#EF4444] animate-pulse" />
                 Priority Dispatch Desk

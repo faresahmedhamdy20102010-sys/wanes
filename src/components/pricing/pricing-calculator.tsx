@@ -71,17 +71,17 @@ export function PricingCalculator({
   }
 
   return (
-    <div className="relative mx-auto mt-12 w-full max-w-5xl overflow-hidden rounded-3xl border border-[#3B82F6]/25 bg-[#1E293B]/90 p-6 sm:p-9 lg:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_25px_-5px_rgba(59,130,246,0.15),inset_0_1px_0_0_rgba(255,255,255,0.08)] backdrop-blur-2xl">
+    <div className="relative mx-auto mt-8 sm:mt-12 w-full max-w-5xl overflow-hidden rounded-2xl sm:rounded-3xl border border-[#3B82F6]/25 bg-[#1E293B]/90 p-4 sm:p-9 lg:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_25px_-5px_rgba(59,130,246,0.15),inset_0_1px_0_0_rgba(255,255,255,0.08)] backdrop-blur-2xl">
       <div className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-[#3B82F6]/10 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-20 -left-20 size-72 rounded-full bg-[#06B6D4]/10 blur-[100px]" />
 
-      <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-white/[0.08] pb-6">
+      <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-white/[0.08] pb-5 sm:pb-6">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/30 bg-[#3B82F6]/10 px-3.5 py-1 text-xs font-semibold text-[#60A5FA]">
             <Calculator className="size-3.5 text-[#3B82F6]" />
             Interactive Value &amp; Savings Estimator
           </div>
-          <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight text-[#F8FAFC]">
+          <h3 className="mt-2 text-xl sm:text-3xl font-extrabold tracking-tight text-[#F8FAFC]">
             Customize Your Care Volume
           </h3>
           <p className="mt-1 text-xs sm:text-sm text-[#94A3B8]">
@@ -89,7 +89,7 @@ export function PricingCalculator({
           </p>
         </div>
 
-        <div className="shrink-0 flex items-center gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5">
+        <div className="shrink-0 flex items-center gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 self-start md:self-auto">
           <div className="flex size-9 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400">
             <DollarSign className="size-5" />
           </div>
@@ -102,17 +102,17 @@ export function PricingCalculator({
         </div>
       </div>
 
-      <div className="relative mt-8 space-y-6">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-3.5 rounded-2xl border border-[#3B82F6]/30 bg-[#0F172A]/90 backdrop-blur-xl">
+      <div className="relative mt-6 sm:mt-8 space-y-5 sm:space-y-6">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-2xl border border-[#3B82F6]/30 bg-[#0F172A]/90 backdrop-blur-xl">
           <span className="text-xs font-bold text-[#F8FAFC] flex items-center gap-1.5">
             <Zap className="size-3.5 text-[#3B82F6] fill-[#3B82F6]" />
             Direct Comparison (15 vs 30 Services):
           </span>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex flex-col xs:flex-row items-center gap-2 w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setServiceVolume(15)}
-              className={`flex-1 sm:flex-initial px-4 py-1.5 rounded-xl text-xs font-bold cursor-pointer transition-all border ${
+              className={`w-full sm:w-auto px-3.5 sm:px-4 py-2 sm:py-1.5 rounded-xl text-xs font-bold cursor-pointer transition-all border text-center ${
                 serviceVolume === 15
                   ? "bg-[#3B82F6] text-white border-[#60A5FA] shadow-md shadow-[#3B82F6]/30"
                   : "bg-[#1E293B] text-[#94A3B8] border-white/10 hover:text-white"
@@ -123,7 +123,7 @@ export function PricingCalculator({
             <button
               type="button"
               onClick={() => setServiceVolume(30)}
-              className={`flex-1 sm:flex-initial px-4 py-1.5 rounded-xl text-xs font-bold cursor-pointer transition-all border ${
+              className={`w-full sm:w-auto px-3.5 sm:px-4 py-2 sm:py-1.5 rounded-xl text-xs font-bold cursor-pointer transition-all border text-center ${
                 serviceVolume === 30
                   ? "bg-[#3B82F6] text-white border-[#60A5FA] shadow-md shadow-[#3B82F6]/30"
                   : "bg-[#1E293B] text-[#94A3B8] border-white/10 hover:text-white"

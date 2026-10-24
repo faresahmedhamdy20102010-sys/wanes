@@ -119,19 +119,19 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
           : "bg-transparent border-b border-transparent shadow-none"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6 lg:px-8">
         <button
           type="button"
           onClick={handleBrandClick}
-          className="flex cursor-pointer items-center gap-2.5 transition-all hover:opacity-90 focus:outline-none"
+          className="flex cursor-pointer items-center gap-2 sm:gap-2.5 transition-all hover:opacity-90 focus:outline-none shrink-0"
           aria-label="Wanes Home"
         >
-          <div className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] text-white shadow-sm shadow-[#3B82F6]/20">
-            <HeartHandshake className="size-5 stroke-[2.3]" />
+          <div className="flex size-8 sm:size-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] text-white shadow-sm shadow-[#3B82F6]/20">
+            <HeartHandshake className="size-4.5 sm:size-5 stroke-[2.3]" />
           </div>
           <div className="flex flex-col text-left">
-            <span className="font-display text-lg font-bold tracking-tight text-[#F8FAFC] leading-none">Wanes</span>
-            <span className="text-[10px] font-semibold tracking-wider text-[#06B6D4] uppercase">Care &amp; Aid</span>
+            <span className="font-display text-base sm:text-lg font-bold tracking-tight text-[#F8FAFC] leading-none">Wanes</span>
+            <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider text-[#06B6D4] uppercase">Care &amp; Aid</span>
           </div>
         </button>
 
@@ -147,8 +147,10 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2 sm:gap-3">
-          <SimpleModeButton variant="navbar" />
+        <div className="flex items-center gap-1.5 sm:gap-3">
+          <div className="hidden sm:flex">
+            <SimpleModeButton variant="navbar" />
+          </div>
 
           {!isClient && !user && (
             <button
@@ -165,22 +167,23 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
           <Button
             size="sm"
             onClick={handleRequestCareClick}
-            className="cursor-pointer gap-1.5 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] px-4 py-2 font-semibold text-white shadow-sm shadow-[#3B82F6]/20 hover:shadow-md hover:shadow-black/40 border border-[#06B6D4]/30 transition-all active:scale-[0.98]"
+            className="cursor-pointer gap-1 sm:gap-1.5 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-sm shadow-[#3B82F6]/20 hover:shadow-md hover:shadow-black/40 border border-[#06B6D4]/30 transition-all active:scale-[0.98] shrink-0"
           >
-            <Heart className="size-4 fill-white text-white" />
-            <span>Request Care</span>
+            <Heart className="size-3.5 sm:size-4 fill-white text-white shrink-0" />
+            <span className="hidden xs:inline">Request Care</span>
+            <span className="xs:hidden">Request</span>
           </Button>
 
-          <div className="flex items-center pl-2 sm:pl-3 ml-1 sm:ml-2 border-l border-white/10">
+          <div className="flex items-center pl-1 sm:pl-3 ml-0.5 sm:ml-2 border-l border-white/10">
             {user ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => navigate("dashboard")}
-                  className="cursor-pointer gap-1.5 rounded-full border-[#06B6D4]/30 bg-[#3B82F6]/10 px-3.5 py-1.5 text-xs font-semibold text-[#06B6D4] hover:border-[#06B6D4]/50 hover:bg-[#3B82F6]/20 hover:text-white transition-all shadow-xs"
+                  className="cursor-pointer gap-1 sm:gap-1.5 rounded-full border-[#06B6D4]/30 bg-[#3B82F6]/10 px-2.5 sm:px-3.5 py-1.5 text-xs font-semibold text-[#06B6D4] hover:border-[#06B6D4]/50 hover:bg-[#3B82F6]/20 hover:text-white transition-all shadow-xs shrink-0"
                 >
-                  <LayoutDashboard className="size-4 text-[#06B6D4]" />
+                  <LayoutDashboard className="size-3.5 sm:size-4 text-[#06B6D4]" />
                   <span className="hidden sm:inline">Dashboard</span>
                 </Button>
 
@@ -189,9 +192,9 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="cursor-pointer gap-1.5 rounded-full border-white/10 bg-white/[0.03] text-[#94A3B8] hover:border-[#EF4444]/40 hover:bg-[#EF4444]/10 hover:text-[#EF4444] px-3"
+                      className="cursor-pointer gap-1 rounded-full border-white/10 bg-white/[0.03] text-[#94A3B8] hover:border-[#EF4444]/40 hover:bg-[#EF4444]/10 hover:text-[#EF4444] px-2 sm:px-3 shrink-0"
                     >
-                      <LogOut className="size-4 text-[#EF4444]" />
+                      <LogOut className="size-3.5 sm:size-4 text-[#EF4444]" />
                       <span className="hidden sm:inline">Sign Out</span>
                     </Button>
                   </AlertDialogTrigger>
@@ -228,9 +231,9 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
                   setAuthModalUserType("client")
                   setAuthModalOpen(true)
                 }}
-                className="cursor-pointer gap-2 rounded-full border border-[#06B6D4]/30 bg-[#1E293B] hover:bg-[#334155] hover:border-[#06B6D4]/60 hover:text-[#06B6D4] text-[#F8FAFC] px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide shadow-sm hover:shadow-md hover:shadow-black/40 transition-all active:scale-[0.98]"
+                className="cursor-pointer gap-1 sm:gap-2 rounded-full border border-[#06B6D4]/30 bg-[#1E293B] hover:bg-[#334155] hover:border-[#06B6D4]/60 hover:text-[#06B6D4] text-[#F8FAFC] px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold tracking-wide shadow-sm hover:shadow-md hover:shadow-black/40 transition-all active:scale-[0.98] shrink-0"
               >
-                <LogIn className="size-4 text-[#3B82F6]" />
+                <LogIn className="size-3.5 sm:size-4 text-[#3B82F6]" />
                 <span>Log In</span>
               </Button>
             )}
@@ -239,7 +242,7 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden text-slate-300 hover:text-white"
+            className="lg:hidden text-slate-300 hover:text-white shrink-0 size-8 sm:size-9"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
           >
@@ -249,7 +252,7 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
       </div>
 
       {mobileMenuOpen && (
-        <nav className="border-t border-[#06B6D4]/20 bg-[#0F172A]/95 px-4 py-4 backdrop-blur-2xl lg:hidden">
+        <nav className="border-t border-[#06B6D4]/20 bg-[#0F172A]/95 px-4 py-4 backdrop-blur-2xl lg:hidden max-h-[calc(100svh-4rem)] overflow-y-auto">
           <div className="flex flex-col gap-2">
             <Button
               onClick={handleRequestCareClick}

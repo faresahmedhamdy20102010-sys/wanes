@@ -129,7 +129,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
   }
 
   return (
-    <section id="hero" className="relative flex min-h-svh items-center overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 bg-[#0F172A]">
+    <section id="hero" className="relative flex min-h-svh items-center overflow-hidden pt-24 pb-14 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 bg-[#0F172A]">
       <div className="absolute inset-0 z-0 overflow-hidden bg-[#0F172A]">
         <video
           ref={videoRef}
@@ -148,48 +148,48 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
-          <div className="flex flex-col gap-6 lg:col-span-7">
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#06B6D4]/40 bg-[#0F172A]/85 backdrop-blur-md px-4 py-1.5 text-xs font-semibold text-[#06B6D4] shadow-lg shadow-black/40">
-              <span className="relative flex size-2">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-10">
+          <div className="flex flex-col gap-5 sm:gap-6 lg:col-span-7">
+            <div className="inline-flex w-fit max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-[#06B6D4]/40 bg-[#0F172A]/85 backdrop-blur-md px-3 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-[#06B6D4] shadow-lg shadow-black/40">
+              <span className="relative flex size-2 shrink-0">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#06B6D4] opacity-75" />
                 <span className="relative inline-flex size-2 rounded-full bg-[#3B82F6]" />
               </span>
-              <span>Dedicated Client Care Network • 100% Free First Visit</span>
+              <span className="truncate">Dedicated Client Care Network • 100% Free First Visit</span>
             </div>
 
-            <h1 className="text-4xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-5xl lg:text-6xl text-balance leading-[1.12] drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
+            <h1 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-5xl lg:text-6xl text-balance leading-[1.15] sm:leading-[1.12] drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
               Compassionate Care &amp; Daily Help,{" "}
               <span className="bg-gradient-to-r from-[#3B82F6] via-[#06B6D4] to-[#60A5FA] bg-clip-text text-transparent">
                 Requested in Seconds.
               </span>
             </h1>
 
-            <p className="max-w-2xl text-lg text-[#F1F5F9] text-balance leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.85)] font-medium">
+            <p className="max-w-2xl text-base sm:text-lg text-[#F1F5F9] text-balance leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.85)] font-medium">
               Find verified, background-checked local companions for senior care, daily grocery errands,
               device tech setup, and clinic escorts. Monitored with live GPS safety and 24/7 emergency dispatch.
             </p>
 
-            <div className="glass-card-elevated relative overflow-hidden rounded-3xl p-6 sm:p-7 border border-[#06B6D4]/30 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.08)] bg-[#1E293B]/95 backdrop-blur-2xl">
+            <div className="glass-card-elevated relative overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-7 border border-[#06B6D4]/30 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.08)] bg-[#1E293B]/95 backdrop-blur-2xl">
               <div className="pointer-events-none absolute -top-12 left-1/4 h-24 w-1/2 rounded-full bg-[#3B82F6]/3 blur-2xl" />
 
-              <div className="flex items-center justify-between gap-2 pb-3.5 border-b border-white/[0.08] relative">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#06B6D4]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 pb-3 sm:pb-3.5 border-b border-white/[0.08] relative">
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#06B6D4]">
                   Step 1: Choose Your Needed Assistance
                 </span>
-                <span className="text-xs font-medium text-[#94A3B8] flex items-center gap-1">
+                <span className="text-[11px] sm:text-xs font-medium text-[#94A3B8] flex items-center gap-1">
                   <span className="size-1.5 rounded-full bg-[#059669] animate-pulse" />
                   Average Match: &lt; 15 mins
                 </span>
               </div>
 
-              <div className="mt-4 flex flex-wrap gap-2 relative">
+              <div className="mt-3.5 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 relative">
                 {quickCategories.map((cat) => (
                   <button
                     key={cat.id}
                     type="button"
                     onClick={() => setSelectedCategory(cat.id)}
-                    className={`btn-tactile flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold cursor-pointer ${
+                    className={`btn-tactile flex items-center gap-1.5 rounded-full px-3 sm:px-3.5 py-1.5 text-xs font-semibold cursor-pointer ${
                       selectedCategory === cat.id
                         ? "bg-[#3B82F6] text-[#F8FAFC] shadow-sm shadow-[#3B82F6]/15 font-bold border border-[#06B6D4]/40"
                         : "border border-[#06B6D4]/15 bg-[#1E293B] text-[#94A3B8] hover:border-[#06B6D4]/40 hover:text-[#F8FAFC]"
@@ -201,7 +201,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                 ))}
               </div>
 
-              <div className="mt-4.5 flex flex-col gap-2.5 sm:flex-row relative">
+              <div className="mt-4 flex flex-col gap-2.5 sm:flex-row relative">
                 <input
                   type="text"
                   placeholder="Describe your request (e.g. Grocery run, doctor walk)..."
@@ -210,13 +210,13 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                   onKeyDown={(e) => {
                     if (e.key === "Enter") handleStartRequest()
                   }}
-                  className="flex-1 rounded-xl border border-[#06B6D4]/20 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/25 transition-all shadow-inner"
+                  className="w-full flex-1 rounded-xl border border-[#06B6D4]/20 bg-[#0F172A] px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/25 transition-all shadow-inner"
                 />
 
                 <Button
                   size="lg"
                   onClick={handleStartRequest}
-                  className="btn-tactile cursor-pointer gap-2 bg-[#3B82F6] hover:bg-[#2563EB] font-bold text-white shadow-sm shadow-[#3B82F6]/15 rounded-xl border border-[#06B6D4]/30"
+                  className="btn-tactile cursor-pointer gap-2 bg-[#3B82F6] hover:bg-[#2563EB] font-bold text-white shadow-sm shadow-[#3B82F6]/15 rounded-xl border border-[#06B6D4]/30 w-full sm:w-auto justify-center"
                 >
                   <span>Request Now</span>
                   <ArrowRight className="size-4" />
@@ -282,7 +282,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
           <div className="flex justify-center lg:col-span-5 lg:justify-end">
             <div
               ref={tiltRef}
-              className="w-full max-w-md rounded-3xl p-7 sm:p-8 transition-transform duration-200 ease-out will-change-transform border border-[#06B6D4]/25 bg-[#1E293B]/95 backdrop-blur-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+              className="w-full max-w-md rounded-2xl sm:rounded-3xl p-5 sm:p-8 transition-transform duration-200 ease-out will-change-transform border border-[#06B6D4]/25 bg-[#1E293B]/95 backdrop-blur-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
               style={{ transformStyle: "preserve-3d" }}
             >
               <div className="mb-6 flex items-center justify-between border-b border-white/[0.08] pb-4">

@@ -1194,7 +1194,7 @@ export function AIAssistantWidget() {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50 flex items-center">
+      <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-50 flex items-center">
         {!open && (
           <button
             type="button"
@@ -1218,17 +1218,17 @@ export function AIAssistantWidget() {
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="relative flex size-14 items-center justify-center rounded-full bg-gradient-to-tr from-[#2563EB] via-[#3B82F6] to-[#06B6D4] text-white shadow-[0_8px_25px_-5px_rgba(0,0,0,0.6),0_0_12px_rgba(59,130,246,0.2)] border-2 border-[#93C5FD]/30 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/25"
+          className="relative flex size-12 sm:size-14 items-center justify-center rounded-full bg-gradient-to-tr from-[#2563EB] via-[#3B82F6] to-[#06B6D4] text-white shadow-[0_8px_25px_-5px_rgba(0,0,0,0.6),0_0_12px_rgba(59,130,246,0.2)] border-2 border-[#93C5FD]/30 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/25"
           aria-label="Toggle Wanes Master Companion AI"
         >
           {open ? (
-            <X className="size-6 text-white transition-transform duration-200 rotate-0 group-hover:rotate-90 stroke-[2.5]" />
+            <X className="size-5 sm:size-6 text-white transition-transform duration-200 rotate-0 group-hover:rotate-90 stroke-[2.5]" />
           ) : (
             <>
-              <Sparkles className="size-6 text-white animate-pulse stroke-[2.3]" />
-              <span className="absolute -top-1 -right-1 flex size-4">
+              <Sparkles className="size-5 sm:size-6 text-white animate-pulse stroke-[2.3]" />
+              <span className="absolute -top-1 -right-1 flex size-3.5 sm:size-4">
                 <span className="animate-ping absolute inline-flex size-full rounded-full bg-[#059669] opacity-80" />
-                <span className="relative inline-flex rounded-full size-4 bg-[#059669] border-2 border-[#0F172A] shadow-sm" />
+                <span className="relative inline-flex rounded-full size-3.5 sm:size-4 bg-[#059669] border-2 border-[#0F172A] shadow-sm" />
               </span>
             </>
           )}
@@ -1237,11 +1237,11 @@ export function AIAssistantWidget() {
 
       {open && (
         <div
-          className={`fixed bottom-24 right-4 sm:right-6 z-50 flex flex-col ${
-            isExpanded ? "w-[580px] h-[670px]" : "w-[390px] sm:w-[440px] h-[590px]"
-          } max-w-[calc(100vw-32px)] max-h-[calc(100vh-120px)] rounded-3xl border border-white/[0.08] bg-[#1E293B]/95 backdrop-blur-2xl shadow-[0_25px_70px_rgba(0,0,0,0.85)] overflow-hidden animate-in fade-in zoom-in-95 duration-200 text-[#F8FAFC] flex-col justify-between`}
+          className={`fixed bottom-18 sm:bottom-24 right-3 sm:right-6 z-50 flex flex-col ${
+            isExpanded ? "w-[580px] h-[670px]" : "w-[calc(100vw-24px)] sm:w-[440px] h-[540px] sm:h-[590px]"
+          } max-w-[calc(100vw-24px)] sm:max-w-[calc(100vw-32px)] max-h-[calc(100svh-85px)] rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/95 backdrop-blur-2xl shadow-[0_25px_70px_rgba(0,0,0,0.85)] overflow-hidden animate-in fade-in zoom-in-95 duration-200 text-[#F8FAFC] flex-col justify-between`}
         >
-          <div className="flex items-center justify-between border-b border-white/[0.08] bg-[#0F172A]/80 px-4 py-3.5 backdrop-blur-md">
+          <div className="flex items-center justify-between border-b border-white/[0.08] bg-[#0F172A]/80 px-4 py-3 sm:py-3.5 backdrop-blur-md">
             <div className="flex items-center gap-3">
               <div className="relative flex size-10 items-center justify-center rounded-2xl bg-[#3B82F6] text-white font-black shadow-lg shadow-[#3B82F6]/30 border border-[#06B6D4]/40">
                 <Bot className="size-5 stroke-[2.5]" />

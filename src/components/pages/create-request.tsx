@@ -198,20 +198,20 @@ export function CreateRequestPage() {
     <div className="min-h-svh bg-background">
       <Navbar onOpenRequestModal={() => navigate("home")} onOpenVoiceAssistant={() => {}} />
       <div className="pt-20">
-        <div className="mx-auto w-full max-w-2xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="mb-8 text-center">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+        <div className="mx-auto w-full max-w-2xl px-4 py-8 sm:py-12 sm:px-6 lg:px-8">
+          <div className="mb-6 sm:mb-8 text-center">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-medium text-primary">
               Post a Request
             </div>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight">
               Create Assistance Request
             </h1>
-            <p className="mt-3 text-lg text-muted-foreground text-balance">
+            <p className="mt-2 text-sm sm:text-base text-muted-foreground text-balance">
               Describe what you need help with, and we'll match you with a verified volunteer nearby.
             </p>
           </div>
 
-          <Card className="glass-card p-6 sm:p-8 bg-[#1E293B]/85 border-white/[0.08] backdrop-blur-xl">
+          <Card className="glass-card p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#1E293B]/85 border-white/[0.08] backdrop-blur-xl">
             <form onSubmit={handleSubmit} className="space-y-5">
               <Field data-invalid={!!errors.title}>
                 <FieldLabel htmlFor="req-title" className="text-xs text-[#94A3B8]">Title</FieldLabel>
@@ -234,7 +234,7 @@ export function CreateRequestPage() {
                       key={c.value}
                       type="button"
                       onClick={() => setCategory(c.value)}
-                      className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-medium transition-all cursor-pointer ${
+                      className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                         category === c.value
                           ? "border-[#3B82F6] bg-[#3B82F6]/15 text-[#3B82F6]"
                           : "border-white/[0.08] bg-[#0F172A]/60 text-[#94A3B8] hover:border-[#3B82F6]/30 hover:text-[#F8FAFC]"
@@ -249,13 +249,13 @@ export function CreateRequestPage() {
 
               <Field>
                 <FieldLabel className="text-xs text-[#94A3B8]">Urgency Level</FieldLabel>
-                <div className="flex gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   {urgencies.map((u) => (
                     <button
                       key={u.value}
                       type="button"
                       onClick={() => setUrgency(u.value)}
-                      className={`flex-1 rounded-xl border px-3 py-2.5 text-sm font-medium transition-all cursor-pointer ${
+                      className={`w-full rounded-xl border px-3 py-2.5 text-xs sm:text-sm font-medium transition-all cursor-pointer text-center ${
                         urgency === u.value
                           ? `border-transparent ${u.color}`
                           : "border-white/[0.08] bg-[#0F172A]/60 text-[#94A3B8] hover:border-[#3B82F6]/30 hover:text-[#F8FAFC]"

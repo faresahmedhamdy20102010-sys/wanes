@@ -103,7 +103,7 @@ export function DailyServicesCalculator({
 
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-3xl border border-[#3B82F6]/30 bg-[#1E293B] p-6 sm:p-8 lg:p-9 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_25px_-5px_rgba(59,130,246,0.18),inset_0_1px_0_0_rgba(255,255,255,0.08)] backdrop-blur-2xl transition-all ${className}`}
+      className={`relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-[#3B82F6]/30 bg-[#1E293B] p-4 sm:p-8 lg:p-9 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_25px_-5px_rgba(59,130,246,0.18),inset_0_1px_0_0_rgba(255,255,255,0.08)] backdrop-blur-2xl transition-all ${className}`}
     >
       <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#3B82F6]/10 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#059669]/10 blur-[110px]" />
@@ -268,7 +268,7 @@ export function DailyServicesCalculator({
         </div>
 
         <div className="lg:col-span-5">
-          <div className="rounded-2xl border border-emerald-500/30 bg-gradient-to-b from-[#0F172A] to-[#1E293B] p-6 shadow-2xl relative overflow-hidden space-y-5">
+          <div className="rounded-2xl border border-emerald-500/30 bg-gradient-to-b from-[#0F172A] to-[#1E293B] p-4 sm:p-6 shadow-2xl relative overflow-hidden space-y-5">
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#059669] via-[#10B981] to-[#3B82F6]" />
 
             <div className="text-center pt-1">

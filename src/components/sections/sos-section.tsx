@@ -115,32 +115,32 @@ export function SosSection() {
   }
 
   return (
-    <section id="sos" className="relative overflow-hidden bg-[#0F172A] py-28 sm:py-36 lg:py-40">
+    <section id="sos" className="relative overflow-hidden bg-[#0F172A] py-16 sm:py-32 lg:py-36">
       <div className="pointer-events-none absolute -top-24 left-1/4 size-96 rounded-full bg-blue-500/5 blur-[140px]" />
       <div className="pointer-events-none absolute -bottom-24 right-1/4 size-96 rounded-full bg-red-500/10 blur-[140px]" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center mb-16 sm:mb-20 space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#EF4444]/30 bg-[#EF4444]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#EF4444] shadow-sm shadow-[#EF4444]/10">
+        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#EF4444]/30 bg-[#EF4444]/10 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#EF4444] shadow-sm shadow-[#EF4444]/10">
             <ShieldAlert className="size-3.5 text-[#EF4444]" />
             <span>Dedicated Rapid Safety Architecture</span>
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F8FAFC]">
             Guarded Emergency Response,{" "}
             <span className="bg-gradient-to-r from-[#EF4444] via-[#F87171] to-[#EF4444] bg-clip-text text-transparent">
               Built for Absolute Peace of Mind
             </span>
           </h2>
 
-          <p className="text-base text-[#94A3B8] sm:text-lg leading-relaxed text-balance">
+          <p className="text-sm sm:text-lg text-[#94A3B8] leading-relaxed text-balance">
             Every interaction is fortified by real-time safety telemetry. A protected 3-second hold prevents accidental activations while instantly connecting your family to verified nearby helpers and our 24/7 dispatch desk.
           </p>
         </div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="flex justify-center lg:col-span-5">
-            <div className="relative w-full max-w-sm rounded-[2.5rem] border border-[#EF4444]/25 bg-[#1E293B] p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-2xl">
+            <div className="relative w-full max-w-[340px] sm:max-w-sm rounded-[2rem] sm:rounded-[2.5rem] border border-[#EF4444]/25 bg-[#1E293B] p-4 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-2xl">
               <div className="mx-auto mb-3 flex h-4 w-28 items-center justify-between rounded-full bg-black px-2.5 shadow-inner">
                 <div className="size-2 rounded-full border border-white/10 bg-[#0F172A]" />
                 <div className="flex items-center gap-1.5">
@@ -323,23 +323,23 @@ export function SosSection() {
                         setIsPlaying(false)
                       }
                     }}
-                    className={`group relative flex cursor-pointer items-start gap-4 rounded-3xl p-5 sm:p-6 transition-all duration-300 ${
+                    className={`group relative flex cursor-pointer items-start gap-3 sm:gap-4 rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all duration-300 ${
                       isActive
                         ? "border border-[#06B6D4]/35 bg-[#1E293B] shadow-[0_15px_35px_-10px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                         : "border border-[#06B6D4]/15 bg-[#1E293B] hover:border-[#06B6D4]/30 hover:bg-[#1E293B] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.04)]"
                     }`}
                   >
                     <div
-                      className={`flex size-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
+                      className={`flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
                         isActive
                           ? "border border-[#06B6D4]/30 bg-[#3B82F6]/15 text-[#06B6D4] shadow-sm"
                           : "border border-white/10 bg-[#0F172A] text-[#94A3B8] group-hover:border-[#06B6D4]/30 group-hover:text-[#06B6D4]"
                       }`}
                     >
-                      <IconComponent className="size-6" />
+                      <IconComponent className="size-5 sm:size-6" />
                     </div>
 
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <span
@@ -358,7 +358,7 @@ export function SosSection() {
                           )}
                         </div>
                         <ArrowRight
-                          className={`size-4 transition-transform duration-300 ${
+                          className={`size-4 transition-transform duration-300 shrink-0 ${
                             isActive
                               ? "translate-x-0 text-[#06B6D4] opacity-100"
                               : "-translate-x-1 text-slate-600 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-[#94A3B8]"
@@ -391,11 +391,11 @@ export function SosSection() {
               })}
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-3 sm:pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-3 sm:pt-4">
               <Button
                 size="lg"
                 onClick={() => navigate("safety")}
-                className="cursor-pointer gap-2 bg-[#3B82F6] hover:bg-[#2563EB] font-semibold text-white shadow-sm shadow-[#3B82F6]/15 border border-[#06B6D4]/30"
+                className="cursor-pointer gap-2 bg-[#3B82F6] hover:bg-[#2563EB] font-semibold text-white shadow-sm shadow-[#3B82F6]/15 border border-[#06B6D4]/30 w-full sm:w-auto justify-center"
               >
                 <ShieldAlert className="size-4 text-white" />
                 Explore Safety Protocols
@@ -404,7 +404,7 @@ export function SosSection() {
                 variant="outline"
                 size="lg"
                 onClick={() => navigate("signup")}
-                className="cursor-pointer gap-2 border-[#06B6D4]/20 bg-[#1E293B] text-[#F8FAFC] hover:border-[#06B6D4]/40 hover:bg-[#334155] hover:text-white"
+                className="cursor-pointer gap-2 border-[#06B6D4]/20 bg-[#1E293B] text-[#F8FAFC] hover:border-[#06B6D4]/40 hover:bg-[#334155] hover:text-white w-full sm:w-auto justify-center"
               >
                 Join Wanes Network
                 <ArrowRight className="size-4 text-[#06B6D4]" />

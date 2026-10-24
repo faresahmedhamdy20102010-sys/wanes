@@ -75,6 +75,10 @@ export function ServiceJourney() {
   const progressBarRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
+    // Only pin on desktop viewports (>= 1024px) to preserve natural mobile touch scrolling
+    const isDesktop = typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
+    if (!isDesktop) return
+
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -151,7 +155,16 @@ export function ServiceJourney() {
                   return (
                     <div
                       key={step.num}
-                      className={`relative flex cursor-default items-start gap-4 transition-all duration-300 ${
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setActiveStep(idx)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault()
+                          setActiveStep(idx)
+                        }
+                      }}
+                      className={`relative flex cursor-pointer items-start gap-4 transition-all duration-300 ${
                         isActive
                           ? "opacity-100 translate-x-1"
                           : isCompleted
@@ -214,26 +227,26 @@ export function ServiceJourney() {
 
           <div className="lg:col-span-7">
             <div className="relative">
-              <div className="relative overflow-hidden rounded-3xl bg-[#1E293B] p-6 sm:p-8 md:p-10 border border-[#06B6D4]/20 backdrop-blur-xl shadow-2xl transition-all duration-500">
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-[#1E293B] p-4 sm:p-8 md:p-10 border border-[#06B6D4]/20 backdrop-blur-xl shadow-2xl transition-all duration-500">
                 <div className="pointer-events-none absolute -right-16 -top-16 size-48 rounded-full bg-[#3B82F6]/3 blur-2xl" />
                 <div className="pointer-events-none absolute -left-16 -bottom-16 size-48 rounded-full bg-[#06B6D4]/2 blur-2xl" />
 
-                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
+                <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 border-b border-white/[0.08] pb-4 sm:pb-6">
                   <div className="flex items-center gap-3">
-                    <div className="flex size-14 items-center justify-center rounded-2xl bg-[#3B82F6] text-white shadow-sm shadow-[#3B82F6]/15 border border-[#06B6D4]/30">
+                    <div className="flex size-11 sm:size-14 items-center justify-center rounded-xl sm:rounded-2xl bg-[#3B82F6] text-white shadow-sm shadow-[#3B82F6]/15 border border-[#06B6D4]/30 shrink-0">
                       {steps[activeStep].icon}
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-[#06B6D4] uppercase tracking-wider">
+                        <span className="text-[11px] sm:text-xs font-bold text-[#06B6D4] uppercase tracking-wider">
                           Phase {steps[activeStep].num} of 04
                         </span>
                         <span className="inline-block size-1.5 rounded-full bg-[#06B6D4]" />
-                        <span className="text-xs text-[#94A3B8]">
+                        <span className="text-[11px] sm:text-xs text-[#94A3B8]">
                           {steps[activeStep].badge}
                         </span>
                       </div>
-                      <h3 className="text-2xl font-extrabold text-[#F8FAFC] sm:text-3xl">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#F8FAFC]">
                         {steps[activeStep].title}
                       </h3>
                     </div>
@@ -245,20 +258,20 @@ export function ServiceJourney() {
                   </div>
                 </div>
 
-                <div className="mt-6">
-                  <h4 className="text-sm font-semibold uppercase tracking-wider text-[#06B6D4]">
+                <div className="mt-5 sm:mt-6">
+                  <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#06B6D4]">
                     {steps[activeStep].subtitle}
                   </h4>
-                  <p className="mt-2 text-base sm:text-lg text-[#94A3B8] leading-relaxed">
+                  <p className="mt-1.5 sm:mt-2 text-sm sm:text-base md:text-lg text-[#94A3B8] leading-relaxed">
                     {steps[activeStep].description}
                   </p>
                 </div>
 
-                <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                <div className="mt-6 sm:mt-8 grid gap-2.5 sm:gap-3 grid-cols-1 sm:grid-cols-3">
                   {steps[activeStep].highlights.map((highlight, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-2.5 rounded-xl border border-[#06B6D4]/15 bg-[#0F172A] p-3 text-xs font-medium text-[#F8FAFC] backdrop-blur-md transition-colors hover:border-[#06B6D4]/40"
+                      className="flex items-center gap-2.5 rounded-xl border border-[#06B6D4]/15 bg-[#0F172A] p-2.5 sm:p-3 text-xs font-medium text-[#F8FAFC] backdrop-blur-md transition-colors hover:border-[#06B6D4]/40"
                     >
                       <div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#3B82F6]/20 text-[#06B6D4]">
                         <ShieldCheck className="size-3" />
