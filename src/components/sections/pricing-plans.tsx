@@ -9,16 +9,12 @@ import {
   Building2,
   CalendarCheck,
   HeartHandshake,
-  Users,
-  Coins,
   Clock,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { useRouter } from "@/lib/router"
 import { toast } from "sonner"
-import { PricingCalculator } from "@/components/pricing/pricing-calculator"
-import { DailyServicesCalculator } from "@/components/pricing/daily-services-calculator"
 
 type PricingTier = {
   id: string
@@ -115,7 +111,6 @@ const tiers: PricingTier[] = [
 export function PricingPlans() {
   const { navigate } = useRouter()
   const [isAnnual, setIsAnnual] = React.useState(false)
-  const [calculatorRole, setCalculatorRole] = React.useState<"client" | "helper">("client")
 
   function handleAction(tier: PricingTier) {
     if (tier.actionType === "contact") {
@@ -136,15 +131,6 @@ export function PricingPlans() {
         cycle: isAnnual && !tier.isPerService ? "annual" : "monthly",
       })
     }
-  }
-
-  function handleCalculatorSelect(planId: string, amount: number, services: number) {
-    navigate("checkout", {
-      plan: planId,
-      amount: String(amount),
-      services: String(services),
-      cycle: isAnnual ? "annual" : "monthly",
-    })
   }
 
   return (
@@ -209,48 +195,6 @@ export function PricingPlans() {
               </span>
             </button>
           </div>
-        </div>
-
-        <div className="mt-8 flex justify-center w-full px-1">
-          <div className="flex flex-col sm:inline-flex sm:flex-row items-stretch sm:items-center gap-1.5 rounded-2xl border border-white/10 bg-[#1E293B] p-1.5 backdrop-blur-xl shadow-xl shadow-black/40 w-full sm:w-auto max-w-full">
-            <button
-              type="button"
-              onClick={() => setCalculatorRole("client")}
-              className={`flex items-center justify-center gap-2 rounded-xl px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer text-center ${
-                calculatorRole === "client"
-                  ? "bg-[#3B82F6] text-white shadow-lg shadow-[#3B82F6]/30 border border-[#60A5FA]/40"
-                  : "text-[#94A3B8] hover:text-[#F8FAFC]"
-              }`}
-            >
-              <Users className="size-4 shrink-0" />
-              <span>Family Care Packages (15 vs 30 / mo)</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setCalculatorRole("helper")}
-              className={`flex items-center justify-center gap-2 rounded-xl px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer text-center ${
-                calculatorRole === "helper"
-                  ? "bg-[#059669] text-white shadow-lg shadow-[#059669]/30 border border-emerald-400/40"
-                  : "text-[#94A3B8] hover:text-[#F8FAFC]"
-              }`}
-            >
-              <Coins className="size-4 shrink-0" />
-              <span>Helper Daily Earnings Slider (1–10 / day)</span>
-            </button>
-          </div>
-        </div>
-
-        <div className="mt-4">
-          {calculatorRole === "client" ? (
-            <PricingCalculator
-              isAnnual={isAnnual}
-              onSelectPlan={handleCalculatorSelect}
-            />
-          ) : (
-            <div className="mx-auto mt-6 max-w-5xl">
-              <DailyServicesCalculator variant="pricing" />
-            </div>
-          )}
         </div>
 
         <div className="mt-16 text-center">
