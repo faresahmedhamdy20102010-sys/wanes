@@ -113,78 +113,78 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
   }
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
         isScrolled
           ? "bg-[#0F172A]/85 backdrop-blur-xl border-b border-[#06B6D4]/15 shadow-[0_4px_30px_rgba(0,0,0,0.6)]"
           : "bg-transparent border-b border-transparent shadow-none"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-2 sm:gap-4 lg:gap-6 px-3 sm:px-6 lg:px-8">
         <button
           type="button"
           onClick={handleBrandClick}
           className="flex cursor-pointer items-center gap-2 sm:gap-2.5 transition-all hover:opacity-90 focus:outline-none shrink-0"
           aria-label="Wanes Home"
         >
-          <div className="flex size-8 sm:size-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] text-white shadow-sm shadow-[#3B82F6]/20">
+          <div className="flex size-8 sm:size-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] text-white shadow-sm shadow-[#3B82F6]/20 shrink-0">
             <HeartHandshake className="size-4.5 sm:size-5 stroke-[2.3]" />
           </div>
-          <div className="flex flex-col text-left">
-            <span className="font-display text-base sm:text-lg font-bold tracking-tight text-[#F8FAFC] leading-none">Wanes</span>
-            <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider text-[#06B6D4] uppercase">Care &amp; Aid</span>
+          <div className="flex flex-col text-left whitespace-nowrap">
+            <span className="font-display text-base sm:text-lg font-bold tracking-tight text-[#F8FAFC] leading-none whitespace-nowrap">Wanes</span>
+            <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider text-[#06B6D4] uppercase whitespace-nowrap">Care &amp; Aid</span>
           </div>
         </button>
 
-        <nav className="hidden items-center gap-1 lg:flex rounded-full border border-white/[0.08] bg-white/[0.02] p-1 backdrop-blur-md">
+        <nav className="hidden items-center gap-1 xl:flex rounded-full border border-white/[0.08] bg-white/[0.02] p-1 backdrop-blur-md shrink-0">
           {navLinks.map((link) => (
             <a
               key={link.target}
               href={`#${link.target}`}
               onClick={(e) => handleAnchorClick(link.target, e)}
-              className="rounded-full px-3.5 py-1.5 text-[13px] font-medium text-[#94A3B8] transition-all duration-200 hover:bg-white/[0.08] hover:text-[#F8FAFC] focus:outline-none"
+              className="rounded-full px-3.5 py-1.5 text-[13px] font-medium text-[#94A3B8] transition-all duration-200 hover:bg-white/[0.08] hover:text-[#F8FAFC] focus:outline-none whitespace-nowrap shrink-0"
             >
               {link.label}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-1.5 sm:gap-3">
-          <div className="hidden sm:flex">
-            <SimpleModeButton variant="navbar" />
+        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 shrink-0">
+          <div className="hidden sm:flex shrink-0">
+            <SimpleModeButton variant="navbar" className="whitespace-nowrap shrink-0" />
           </div>
 
           {!isClient && !user && (
             <button
               type="button"
               onClick={() => navigate("volunteer")}
-              className="hidden sm:inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-3.5 py-1.5 text-xs font-medium text-[#94A3B8] transition-all duration-200 hover:border-[#06B6D4]/30 hover:bg-[#3B82F6]/10 hover:text-[#06B6D4]"
+              className="hidden md:inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-3.5 py-1.5 text-xs font-medium text-[#94A3B8] transition-all duration-200 hover:border-[#06B6D4]/30 hover:bg-[#3B82F6]/10 hover:text-[#06B6D4] whitespace-nowrap shrink-0"
               title="Service Provider & Volunteer Onboarding"
             >
-              <span className="size-1.5 rounded-full bg-[#059669] shadow-[0_0_8px_rgba(5,150,105,0.6)]" />
-              <span>Become a Helper</span>
+              <span className="size-1.5 rounded-full bg-[#059669] shadow-[0_0_8px_rgba(5,150,105,0.6)] shrink-0" />
+              <span className="whitespace-nowrap">Become a Helper</span>
             </button>
           )}
 
           <Button
             size="sm"
             onClick={handleRequestCareClick}
-            className="cursor-pointer gap-1 sm:gap-1.5 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-sm shadow-[#3B82F6]/20 hover:shadow-md hover:shadow-black/40 border border-[#06B6D4]/30 transition-all active:scale-[0.98] shrink-0"
+            className="cursor-pointer gap-1 sm:gap-1.5 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-sm shadow-[#3B82F6]/20 hover:shadow-md hover:shadow-black/40 border border-[#06B6D4]/30 transition-all active:scale-[0.98] whitespace-nowrap shrink-0"
           >
             <Heart className="size-3.5 sm:size-4 fill-white text-white shrink-0" />
-            <span className="hidden xs:inline">Request Care</span>
-            <span className="xs:hidden">Request</span>
+            <span className="hidden sm:inline whitespace-nowrap">Request Care</span>
+            <span className="sm:hidden whitespace-nowrap">Request</span>
           </Button>
 
-          <div className="flex items-center pl-1 sm:pl-3 ml-0.5 sm:ml-2 border-l border-white/10">
+          <div className="flex items-center pl-1 sm:pl-2.5 ml-0.5 sm:ml-1.5 border-l border-white/10 shrink-0">
             {user ? (
-              <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => navigate("dashboard")}
-                  className="cursor-pointer gap-1 sm:gap-1.5 rounded-full border-[#06B6D4]/30 bg-[#3B82F6]/10 px-2.5 sm:px-3.5 py-1.5 text-xs font-semibold text-[#06B6D4] hover:border-[#06B6D4]/50 hover:bg-[#3B82F6]/20 hover:text-white transition-all shadow-xs shrink-0"
+                  className="cursor-pointer gap-1 sm:gap-1.5 rounded-full border-[#06B6D4]/30 bg-[#3B82F6]/10 px-2.5 sm:px-3.5 py-1.5 text-xs font-semibold text-[#06B6D4] hover:border-[#06B6D4]/50 hover:bg-[#3B82F6]/20 hover:text-white transition-all shadow-xs whitespace-nowrap shrink-0"
                 >
-                  <LayoutDashboard className="size-3.5 sm:size-4 text-[#06B6D4]" />
-                  <span className="hidden sm:inline">Dashboard</span>
+                  <LayoutDashboard className="size-3.5 sm:size-4 text-[#06B6D4] shrink-0" />
+                  <span className="hidden sm:inline whitespace-nowrap">Dashboard</span>
                 </Button>
 
                 <AlertDialog>
@@ -192,10 +192,10 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="cursor-pointer gap-1 rounded-full border-white/10 bg-white/[0.03] text-[#94A3B8] hover:border-[#EF4444]/40 hover:bg-[#EF4444]/10 hover:text-[#EF4444] px-2 sm:px-3 shrink-0"
+                      className="cursor-pointer gap-1 rounded-full border-white/10 bg-white/[0.03] text-[#94A3B8] hover:border-[#EF4444]/40 hover:bg-[#EF4444]/10 hover:text-[#EF4444] px-2 sm:px-3 whitespace-nowrap shrink-0"
                     >
-                      <LogOut className="size-3.5 sm:size-4 text-[#EF4444]" />
-                      <span className="hidden sm:inline">Sign Out</span>
+                      <LogOut className="size-3.5 sm:size-4 text-[#EF4444] shrink-0" />
+                      <span className="hidden sm:inline whitespace-nowrap">Sign Out</span>
                     </Button>
                   </AlertDialogTrigger>
                   <AlertDialogContent className="border-[#06B6D4]/20 bg-[#1E293B] text-[#F8FAFC]">
@@ -231,10 +231,10 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
                   setAuthModalUserType("client")
                   setAuthModalOpen(true)
                 }}
-                className="cursor-pointer gap-1 sm:gap-2 rounded-full border border-[#06B6D4]/30 bg-[#1E293B] hover:bg-[#334155] hover:border-[#06B6D4]/60 hover:text-[#06B6D4] text-[#F8FAFC] px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold tracking-wide shadow-sm hover:shadow-md hover:shadow-black/40 transition-all active:scale-[0.98] shrink-0"
+                className="cursor-pointer gap-1 sm:gap-2 rounded-full border border-[#06B6D4]/30 bg-[#1E293B] hover:bg-[#334155] hover:border-[#06B6D4]/60 hover:text-[#06B6D4] text-[#F8FAFC] px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold tracking-wide shadow-sm hover:shadow-md hover:shadow-black/40 transition-all active:scale-[0.98] whitespace-nowrap shrink-0"
               >
-                <LogIn className="size-3.5 sm:size-4 text-[#3B82F6]" />
-                <span>Log In</span>
+                <LogIn className="size-3.5 sm:size-4 text-[#3B82F6] shrink-0" />
+                <span className="whitespace-nowrap">Log In</span>
               </Button>
             )}
           </div>
@@ -242,7 +242,7 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden text-slate-300 hover:text-white shrink-0 size-8 sm:size-9"
+            className="xl:hidden text-slate-300 hover:text-white shrink-0 size-8 sm:size-9"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
           >
@@ -252,7 +252,7 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
       </div>
 
       {mobileMenuOpen && (
-        <nav className="border-t border-[#06B6D4]/20 bg-[#0F172A]/95 px-4 py-4 backdrop-blur-2xl lg:hidden max-h-[calc(100svh-4rem)] overflow-y-auto">
+        <nav className="border-t border-[#06B6D4]/20 bg-[#0F172A]/95 px-4 py-4 backdrop-blur-2xl xl:hidden max-h-[calc(100svh-4rem)] overflow-y-auto">
           <div className="flex flex-col gap-2">
             <Button
               onClick={handleRequestCareClick}

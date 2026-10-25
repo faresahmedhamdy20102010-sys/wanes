@@ -179,21 +179,21 @@ export function SimpleModeButton({
           : "Simple Mode: One-click larger text, high contrast & senior-friendly layout"
       }
       onClick={toggleSimpleMode}
-      className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium backdrop-blur-xl transition-all duration-200 cursor-pointer active:scale-95 ${
+      className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium backdrop-blur-xl transition-all duration-200 cursor-pointer active:scale-95 whitespace-nowrap shrink-0 ${
         isSimpleMode
           ? "border-[#3B82F6] bg-[#1E293B] text-white shadow-[0_0_14px_rgba(59,130,246,0.3)] ring-1 ring-[#3B82F6]/40"
           : "border-white/[0.08] bg-[#1E293B]/80 text-[#94A3B8] hover:border-[#3B82F6]/40 hover:bg-[#1E293B] hover:text-[#F8FAFC]"
       } ${className}`}
     >
       <div
-        className={`flex size-4 items-center justify-center transition-colors ${
+        className={`flex size-4 items-center justify-center transition-colors shrink-0 ${
           isSimpleMode ? "text-[#3B82F6]" : "text-[#94A3B8] group-hover:text-[#3B82F6]"
         }`}
       >
         <UniversalAccessIcon size={15} />
       </div>
 
-      <span className="font-semibold tracking-tight text-[11px] select-none">
+      <span className="font-semibold tracking-tight text-[11px] select-none whitespace-nowrap">
         Simple Mode
       </span>
 
@@ -210,7 +210,7 @@ export function SimpleModeButton({
       </div>
 
       {isSimpleMode && (
-        <span className="hidden sm:inline-flex rounded-full bg-[#3B82F6] px-1 py-0.2 text-[9px] font-extrabold text-white leading-none">
+        <span className="hidden sm:inline-flex rounded-full bg-[#3B82F6] px-1 py-0.2 text-[9px] font-extrabold text-white leading-none whitespace-nowrap shrink-0">
           ON
         </span>
       )}
