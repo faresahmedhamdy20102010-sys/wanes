@@ -158,7 +158,7 @@ export function VolunteerPage() {
     <div className="min-h-svh bg-[#0F172A] text-[#F8FAFC]">
       <Navbar onOpenRequestModal={() => navigate("create-request")} onOpenVoiceAssistant={() => {}} />
 
-      <div className="pt-24 pb-20">
+      <div className="pt-28 pb-24 sm:pt-36 sm:pb-32">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex items-center justify-between border-b border-white/[0.08] pb-4">
             <button
@@ -190,7 +190,7 @@ export function VolunteerPage() {
             </div>
           )}
 
-          <div className="mb-12 text-center max-w-3xl mx-auto space-y-4">
+          <div className="mb-12 md:mb-16 lg:mb-20 text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/30 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold text-[#3B82F6]">
               <Sparkles className="size-3.5 text-[#3B82F6]" />
               <span>Join Wanes Provider &amp; Helper Network</span>
@@ -200,14 +200,14 @@ export function VolunteerPage() {
               Become a Trusted Care Companion
             </h1>
 
-            <p className="text-base text-[#94A3B8] sm:text-lg">
+            <p className="text-base text-[#94A3B8] sm:text-lg max-w-2xl mx-auto leading-relaxed text-balance">
               Make a meaningful difference for local seniors and families. Choose your path: volunteer for
               certified community hours &amp; university credits, or earn money as a paid companion with flexible local visits.
             </p>
           </div>
 
-          <div className="mb-14 grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/[0.08] bg-[#1E293B]/85 p-6 sm:p-8 backdrop-blur-xl flex flex-col justify-between">
+          <div className="mb-14 sm:mb-20 grid gap-6 md:gap-8 lg:gap-10 md:grid-cols-2">
+            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-6 sm:p-8 lg:p-10 backdrop-blur-xl flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex size-12 items-center justify-center rounded-xl bg-[#3B82F6]/20 text-[#3B82F6]">
@@ -244,7 +244,7 @@ export function VolunteerPage() {
               </Button>
             </div>
 
-            <div className="rounded-2xl border border-[#06B6D4]/30 bg-[#1E293B] p-6 sm:p-8 backdrop-blur-xl flex flex-col justify-between shadow-[0_20px_45px_-15px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+            <div className="rounded-2xl sm:rounded-3xl border border-[#06B6D4]/30 bg-[#1E293B] p-6 sm:p-8 lg:p-10 backdrop-blur-xl flex flex-col justify-between shadow-[0_20px_45px_-15px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.06)]">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex size-12 items-center justify-center rounded-xl bg-[#3B82F6] text-white font-bold">

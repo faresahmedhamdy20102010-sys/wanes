@@ -61,27 +61,27 @@ export function ImpactTrust() {
   ]
 
   return (
-    <section id="impact" className="relative overflow-hidden bg-[#0F172A] py-16 sm:py-32 lg:py-40">
+    <section id="impact" className="relative overflow-hidden bg-[#0F172A] py-20 md:py-28 lg:py-36">
       <div className="pointer-events-none absolute -top-32 right-1/4 size-96 rounded-full bg-blue-500/5 blur-[140px]" />
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 sm:mb-16 text-center max-w-3xl mx-auto space-y-4">
+        <div className="mb-12 md:mb-16 lg:mb-20 text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#06B6D4] shadow-sm shadow-[#3B82F6]/10">
             <span>Verified care standards</span>
           </div>
-          <h2 className="text-2xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
             Built on Safety, Driven by Dignity
           </h2>
-          <p className="text-sm text-[#94A3B8] sm:text-lg leading-relaxed text-balance">
+          <p className="text-base text-[#94A3B8] sm:text-lg leading-relaxed max-w-2xl mx-auto text-balance">
             Every visit is identity-verified, GPS-monitored, and confirmed by the family—creating a gentle, dependable care network you can always trust.
           </p>
         </div>
 
-        <div className="mb-12 sm:mb-16 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+        <div className="mb-14 sm:mb-20 grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 lg:grid-cols-4">
           {statCards.map((stat, i) => (
             <div
               key={i}
-              className="group rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-4 sm:p-7 text-center backdrop-blur-2xl shadow-[0_20px_45px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#06B6D4]/35"
+              className="group rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-5 sm:p-8 text-center backdrop-blur-2xl shadow-[0_20px_45px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#06B6D4]/35"
             >
               <div className="mx-auto mb-2.5 sm:mb-3.5 flex size-10 sm:size-13 items-center justify-center rounded-xl sm:rounded-2xl bg-[#3B82F6]/10 border border-[#06B6D4]/20 text-[#06B6D4] transition-colors duration-200 group-hover:border-[#06B6D4]/40 group-hover:bg-[#3B82F6]/20">
                 {stat.icon}
@@ -92,11 +92,11 @@ export function ImpactTrust() {
           ))}
         </div>
 
-        <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 md:gap-8 lg:gap-10 lg:grid-cols-3">
           {trustPillars.map((pillar, idx) => (
             <div
               key={idx}
-              className={`group rounded-2xl sm:rounded-3xl border p-5 sm:p-8 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.05)] space-y-3 transition-all duration-300 ease-out hover:-translate-y-1 ${
+              className={`group rounded-2xl sm:rounded-3xl border p-6 sm:p-8 lg:p-10 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.05)] space-y-4 transition-all duration-300 ease-out hover:-translate-y-1 ${
                 idx === 0
                   ? "border-[#06B6D4]/30 bg-gradient-to-br from-[#1E293B] via-[#1E293B] to-[#0F172A] hover:border-[#06B6D4]/50"
                   : "border-[#06B6D4]/15 bg-[#1E293B] hover:border-[#06B6D4]/35"

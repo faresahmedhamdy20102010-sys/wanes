@@ -119,7 +119,7 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
           : "bg-transparent border-b border-transparent shadow-none"
       }`}
     >
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-2 sm:gap-4 lg:gap-6 px-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 lg:gap-8 px-4 sm:px-6 lg:px-8">
         <button
           type="button"
           onClick={handleBrandClick}
@@ -135,7 +135,7 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
           </div>
         </button>
 
-        <nav className="hidden items-center gap-1 xl:flex rounded-full border border-white/[0.08] bg-white/[0.02] p-1 backdrop-blur-md shrink-0">
+        <nav className="hidden items-center gap-1.5 xl:flex rounded-full border border-white/[0.08] bg-white/[0.02] p-1.5 backdrop-blur-md shrink-0">
           {navLinks.map((link) => (
             <a
               key={link.target}
@@ -147,7 +147,7 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 lg:gap-3.5 shrink-0">
           <div className="hidden sm:flex shrink-0">
             <SimpleModeButton variant="navbar" className="whitespace-nowrap shrink-0" />
           </div>
@@ -167,14 +167,14 @@ export function Navbar({ onOpenRequestModal }: NavbarProps = {}) {
           <Button
             size="sm"
             onClick={handleRequestCareClick}
-            className="cursor-pointer gap-1 sm:gap-1.5 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-sm shadow-[#3B82F6]/20 hover:shadow-md hover:shadow-black/40 border border-[#06B6D4]/30 transition-all active:scale-[0.98] whitespace-nowrap shrink-0"
+            className="cursor-pointer gap-1 sm:gap-1.5 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-sm shadow-[#3B82F6]/20 hover:shadow-md hover:shadow-black/40 border border-[#06B6D4]/30 transition-all active:scale-[0.98] whitespace-nowrap shrink-0"
           >
             <Heart className="size-3.5 sm:size-4 fill-white text-white shrink-0" />
             <span className="hidden sm:inline whitespace-nowrap">Request Care</span>
             <span className="sm:hidden whitespace-nowrap">Request</span>
           </Button>
 
-          <div className="flex items-center pl-1 sm:pl-2.5 ml-0.5 sm:ml-1.5 border-l border-white/10 shrink-0">
+          <div className="flex items-center pl-2 sm:pl-3 ml-1 sm:ml-1.5 border-l border-white/10 shrink-0">
             {user ? (
               <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                 <Button

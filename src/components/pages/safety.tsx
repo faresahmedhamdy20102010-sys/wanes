@@ -76,26 +76,26 @@ export function SafetyPage() {
     <div className="min-h-svh bg-background">
       <Navbar onOpenRequestModal={() => navigate("create-request")} onOpenVoiceAssistant={() => {}} />
       <div className="pt-20">
-        <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-400">
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 md:py-20 lg:py-24 sm:px-6 lg:px-8">
+          <div className="mb-12 md:mb-16 lg:mb-20 text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-400 uppercase tracking-wider">
               <ShieldCheck className="size-4" />
-              Trust & Safety Center
+              <span>Trust &amp; Safety Center</span>
             </div>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
               Safety Is Our Foundation
             </h1>
-            <p className="mx-auto mt-3 max-w-2xl text-lg text-muted-foreground text-balance">
+            <p className="mx-auto text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed text-balance">
               Every layer of Wanes is designed to protect our community — from
               identity verification to real-time SOS monitoring.
             </p>
           </div>
 
-          <div className="mb-16">
-            <h2 className="mb-6 text-2xl font-bold tracking-tight">Volunteer Verification Process</h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mb-16 sm:mb-20">
+            <h2 className="mb-8 text-2xl font-bold tracking-tight">Volunteer Verification Process</h2>
+            <div className="grid gap-6 md:gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-4">
               {verificationSteps.map((step, i) => (
-                <Card key={i} className="glass-card p-6">
+                <Card key={i} className="glass-card p-6 sm:p-8">
                   <div className="mb-4 flex size-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
                     {step.icon}
                   </div>
@@ -106,11 +106,11 @@ export function SafetyPage() {
             </div>
           </div>
 
-          <div className="mb-16">
-            <h2 className="mb-6 text-2xl font-bold tracking-tight">SOS Safety Protocols</h2>
-            <div className="grid gap-6 sm:grid-cols-2">
+          <div className="mb-16 sm:mb-20">
+            <h2 className="mb-8 text-2xl font-bold tracking-tight">SOS Safety Protocols</h2>
+            <div className="grid gap-6 md:gap-8 lg:gap-10 sm:grid-cols-2">
               {sosProtocols.map((proto, i) => (
-                <Card key={i} className="glass-card flex items-start gap-4 p-6">
+                <Card key={i} className="glass-card flex items-start gap-4 p-6 sm:p-8">
                   <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-destructive/10 text-destructive">
                     {proto.icon}
                   </div>
@@ -123,7 +123,7 @@ export function SafetyPage() {
             </div>
           </div>
 
-          <Card className="glass-card border-[#059669]/30 bg-[#1E293B]/85 p-8 backdrop-blur-xl">
+          <Card className="glass-card border-[#059669]/30 bg-[#1E293B]/85 p-8 sm:p-10 lg:p-12 backdrop-blur-xl">
             <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
               <div className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-[#059669]/15 text-[#059669] border border-[#059669]/25">
                 <ShieldAlert className="size-8 text-[#059669]" />

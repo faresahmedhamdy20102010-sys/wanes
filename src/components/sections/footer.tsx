@@ -40,12 +40,12 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative overflow-hidden bg-[#0F172A] border-t border-white/[0.08] text-[#94A3B8] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-12">
+    <footer className="relative overflow-hidden bg-[#0F172A] border-t border-white/[0.08] text-[#94A3B8] py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-12">
       <div className="pointer-events-none absolute -bottom-24 left-1/4 size-96 rounded-full bg-[#3B82F6]/2 blur-[140px]" />
       <div className="pointer-events-none absolute -top-24 right-1/4 size-96 rounded-full bg-[#06B6D4]/2 blur-[140px]" />
 
       <div className="relative mx-auto w-full max-w-7xl">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8 pb-10 sm:pb-16 border-b border-white/[0.08]">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 pb-12 sm:pb-16 border-b border-white/[0.08]">
           <div className="space-y-5 lg:col-span-5">
             <div className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-[#3B82F6] text-white shadow-sm shadow-[#3B82F6]/20">

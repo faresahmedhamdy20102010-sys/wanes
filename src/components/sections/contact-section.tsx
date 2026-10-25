@@ -60,32 +60,32 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#0F172A] py-16 sm:py-32 lg:py-40 border-t border-white/[0.08]"
+      className="relative overflow-hidden bg-[#0F172A] py-20 md:py-28 lg:py-36 border-t border-white/[0.08]"
     >
       <div className="pointer-events-none absolute -bottom-32 left-1/2 h-96 w-full -translate-x-1/2 opacity-5 blur-[140px] bg-[#3B82F6]/10" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-16 space-y-4">
+        <div className="mx-auto max-w-3xl text-center mb-12 md:mb-16 lg:mb-20 space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#06B6D4]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#06B6D4] shadow-sm shadow-[#06B6D4]/10">
             <Sparkles className="size-3.5 text-[#06B6D4]" />
             <span>24/7 Operations &amp; Support Desk</span>
           </div>
 
-          <h2 className="text-2xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
             Get in Touch with{" "}
             <span className="bg-gradient-to-r from-[#3B82F6] via-[#06B6D4] to-[#3B82F6] bg-clip-text text-transparent">
               Wanes Operations
             </span>
           </h2>
 
-          <p className="text-sm text-[#94A3B8] sm:text-lg leading-relaxed text-balance">
+          <p className="text-base text-[#94A3B8] sm:text-lg leading-relaxed max-w-2xl mx-auto text-balance">
             Whether you have questions about family care plans, provider verification, or emergency safety protocols, our dedicated team is always here for you.
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
-          <div className="space-y-4 lg:col-span-5">
-            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-5 sm:p-7 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-[#EF4444]/40">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
+          <div className="space-y-5 lg:col-span-5">
+            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-6 sm:p-8 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-[#EF4444]/40">
               <div className="flex items-start gap-4">
                 <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border border-[#EF4444]/25 bg-[#EF4444]/10 text-[#EF4444] shadow-sm">
                   <Headphones className="size-5 sm:size-6" />
@@ -107,7 +107,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-5 sm:p-7 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-[#06B6D4]/30">
+            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-6 sm:p-8 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-[#06B6D4]/30">
               <div className="flex items-start gap-4">
                 <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border border-white/[0.08] bg-[#0F172A]/80 text-[#3B82F6]">
                   <ShieldCheck className="size-5 sm:size-6" />
@@ -124,7 +124,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-5 sm:p-7 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-[#06B6D4]/30">
+            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-6 sm:p-8 backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-[#06B6D4]/30">
               <div className="flex items-start gap-4">
                 <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border border-white/[0.08] bg-[#0F172A]/80 text-[#06B6D4]">
                   <Building2 className="size-5 sm:size-6" />
@@ -148,7 +148,7 @@ export function ContactSection() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-5 sm:p-9 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)]">
+            <div className="rounded-2xl sm:rounded-3xl border border-white/[0.08] bg-[#1E293B]/85 p-6 sm:p-8 lg:p-10 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)]">
               <h3 className="text-xl font-bold text-[#F8FAFC] sm:text-2xl">Send a Message</h3>
               <p className="mt-1 text-xs sm:text-sm text-[#94A3B8]">
                 Submit an inquiry and our team will get back to you promptly.

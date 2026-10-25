@@ -137,7 +137,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
   }
 
   return (
-    <section id="hero" className="relative flex min-h-svh w-full max-w-full items-center overflow-hidden pt-24 pb-14 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 bg-[#0F172A]">
+    <section id="hero" className="relative flex min-h-svh w-full max-w-full items-center overflow-hidden pt-28 pb-20 sm:pt-40 sm:pb-32 lg:pt-44 lg:pb-36 bg-[#0F172A]">
       <div className="absolute inset-0 z-0 w-full h-full max-w-full overflow-hidden pointer-events-none bg-[#0F172A]">
         {/* Desktop Background Video: visible on md and larger screens */}
         <video
@@ -166,9 +166,9 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-10">
-          <div className="flex flex-col gap-5 sm:gap-6 lg:col-span-7">
-            <div className="inline-flex w-fit max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-[#06B6D4]/40 bg-[#0F172A]/85 backdrop-blur-md px-3 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-[#06B6D4] shadow-lg shadow-black/40">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:col-span-7">
+            <div className="inline-flex w-fit max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-[#06B6D4]/40 bg-[#0F172A]/85 backdrop-blur-md px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-[#06B6D4] shadow-lg shadow-black/40">
               <span className="relative flex size-2 shrink-0">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#06B6D4] opacity-75" />
                 <span className="relative inline-flex size-2 rounded-full bg-[#3B82F6]" />
@@ -188,10 +188,10 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
               device tech setup, and clinic escorts. Monitored with live GPS safety and 24/7 emergency dispatch.
             </p>
 
-            <div className="glass-card-elevated relative overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-7 border border-[#06B6D4]/30 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.08)] bg-[#1E293B]/95 backdrop-blur-2xl">
+            <div className="glass-card-elevated relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-9 border border-[#06B6D4]/30 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.08)] bg-[#1E293B]/95 backdrop-blur-2xl">
               <div className="pointer-events-none absolute -top-12 left-1/4 h-24 w-1/2 rounded-full bg-[#3B82F6]/3 blur-2xl" />
 
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 pb-3 sm:pb-3.5 border-b border-white/[0.08] relative">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 pb-3.5 sm:pb-4 border-b border-white/[0.08] relative">
                 <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#06B6D4]">
                   Step 1: Choose needed assistance
                 </span>
@@ -300,7 +300,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
           <div className="flex justify-center lg:col-span-5 lg:justify-end">
             <div
               ref={tiltRef}
-              className="w-full max-w-md rounded-2xl sm:rounded-3xl p-5 sm:p-8 transition-transform duration-200 ease-out will-change-transform border border-[#06B6D4]/25 bg-[#1E293B]/95 backdrop-blur-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+              className="w-full max-w-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 transition-transform duration-200 ease-out will-change-transform border border-[#06B6D4]/25 bg-[#1E293B]/95 backdrop-blur-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_0_rgba(255,255,255,0.06)]"
               style={{ transformStyle: "preserve-3d" }}
             >
               <div className="mb-6 flex items-center justify-between border-b border-white/[0.08] pb-4">
@@ -319,8 +319,8 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                 </span>
               </div>
 
-              <div className="space-y-3.5">
-                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-3.5">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-4">
                   <div className="flex items-center gap-3">
                     <div className="flex size-9 items-center justify-center rounded-lg bg-[#059669]/15 text-[#059669] border border-[#059669]/20">
                       <Clock className="size-4.5" />
@@ -333,7 +333,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                   <span className="text-lg font-black text-[#F8FAFC]">&lt; 15 mins</span>
                 </div>
 
-                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-3.5">
+                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-4">
                   <div className="flex items-center gap-3">
                     <div className="flex size-9 items-center justify-center rounded-lg bg-[#3B82F6]/15 text-[#06B6D4] border border-[#06B6D4]/20">
                       <Users className="size-4.5" />
@@ -346,7 +346,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                   <span className="text-lg font-black text-[#F8FAFC]">450+</span>
                 </div>
 
-                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-3.5">
+                <div className="flex items-center justify-between rounded-2xl border border-[#06B6D4]/15 bg-[#0F172A] p-4">
                   <div className="flex items-center gap-3">
                     <div className="flex size-9 items-center justify-center rounded-lg bg-[#3B82F6]/15 text-[#06B6D4] border border-[#06B6D4]/20">
                       <HandHeart className="size-4.5" />
@@ -360,7 +360,7 @@ export function Hero({ onOpenVideoModal, onRequestCare, onOpenVoiceAssistant }: 
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/[0.08]">
+              <div className="mt-7 flex items-center justify-between pt-4 border-t border-white/[0.08]">
                 <Button
                   variant="ghost"
                   size="sm"

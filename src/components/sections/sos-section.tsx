@@ -115,30 +115,30 @@ export function SosSection() {
   }
 
   return (
-    <section id="sos" className="relative overflow-hidden bg-[#0F172A] py-16 sm:py-32 lg:py-36">
+    <section id="sos" className="relative overflow-hidden bg-[#0F172A] py-20 md:py-28 lg:py-36">
       <div className="pointer-events-none absolute -top-24 left-1/4 size-96 rounded-full bg-blue-500/5 blur-[140px]" />
       <div className="pointer-events-none absolute -bottom-24 right-1/4 size-96 rounded-full bg-red-500/10 blur-[140px]" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+        <div className="mx-auto max-w-3xl text-center mb-12 md:mb-16 lg:mb-20 space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#EF4444]/30 bg-[#EF4444]/10 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#EF4444] shadow-sm shadow-[#EF4444]/10">
             <ShieldAlert className="size-3.5 text-[#EF4444]" />
             <span>Emergency response &amp; family alerts</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F8FAFC]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F8FAFC]">
             Immediate Emergency Help,{" "}
             <span className="bg-gradient-to-r from-[#EF4444] via-[#F87171] to-[#EF4444] bg-clip-text text-transparent">
               When Seconds Count
             </span>
           </h2>
 
-          <p className="text-sm sm:text-lg text-[#94A3B8] leading-relaxed text-balance">
+          <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed max-w-2xl mx-auto text-balance">
             Every visit includes safety oversight. A 3-second hold prevents accidental taps while immediately notifying your family, verified neighborhood responders, and our 24/7 care coordination desk.
           </p>
         </div>
 
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="flex justify-center lg:col-span-5">
             <div className="relative w-full max-w-[340px] sm:max-w-sm rounded-[2rem] sm:rounded-[2.5rem] border border-[#EF4444]/25 bg-[#1E293B] p-4 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-2xl">
               <div className="mx-auto mb-3 flex h-4 w-28 items-center justify-between rounded-full bg-black px-2.5 shadow-inner">

@@ -150,17 +150,17 @@ export function PricingPlans() {
   return (
     <section
       id="plans"
-      className="relative overflow-hidden bg-[#0F172A] py-20 sm:py-28 lg:py-32"
+      className="relative overflow-hidden bg-[#0F172A] py-20 md:py-28 lg:py-36"
     >
       <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-full -translate-x-1/2 opacity-20 blur-[140px] bg-[#3B82F6]/25" />
       <div className="pointer-events-none absolute bottom-0 right-10 size-96 rounded-full opacity-15 blur-[120px] bg-[#06B6D4]/20" />
       <div className="pointer-events-none absolute top-1/3 left-0 size-80 rounded-full opacity-10 blur-[120px] bg-[#3B82F6]/20" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/40 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#60A5FA] shadow-sm shadow-[#3B82F6]/20">
+        <div className="mx-auto max-w-3xl text-center mb-12 md:mb-16 lg:mb-20 space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/40 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#60A5FA] shadow-sm shadow-[#3B82F6]/20">
             <ShieldCheck className="size-3.5 text-[#3B82F6]" />
-            Transparent membership &amp; pricing
+            <span>Transparent membership &amp; pricing</span>
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
@@ -170,11 +170,11 @@ export function PricingPlans() {
             </span>
           </h2>
 
-          <p className="mt-4 text-base text-[#94A3B8] sm:text-lg text-balance">
+          <p className="text-base text-[#94A3B8] sm:text-lg max-w-2xl mx-auto leading-relaxed text-balance">
             Choose between flexible pay-as-you-go visits, the 15-service Pro package ($150/mo), or the 30-service daily care Premium package ($300/mo). 80% is held safely in Paymob escrow.
           </p>
 
-          <div className="mt-8 flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-2.5 sm:gap-3 rounded-2xl border border-white/10 bg-[#1E293B]/90 p-1.5 backdrop-blur-md shadow-lg shadow-black/40 max-w-full">
+          <div className="pt-2 flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-2.5 sm:gap-3 rounded-2xl border border-white/10 bg-[#1E293B]/90 p-1.5 backdrop-blur-md shadow-lg shadow-black/40 max-w-full">
             <button
               type="button"
               onClick={() => setIsAnnual(false)}
@@ -317,7 +317,7 @@ export function PricingPlans() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-6 sm:gap-8 lg:grid-cols-3 lg:items-stretch">
+        <div className="mt-12 lg:mt-16 grid gap-6 md:gap-8 lg:gap-10 lg:grid-cols-3 lg:items-stretch">
           {tiers.map((tier) => {
             const isHighlighted = tier.isPopular
             const price = isAnnual && !tier.isPerService ? tier.annualPrice : tier.monthlyPrice
@@ -334,7 +334,7 @@ export function PricingPlans() {
             return (
               <div
                 key={tier.id}
-                className={`relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-9 backdrop-blur-2xl transition-all duration-300 ${
+                className={`relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 backdrop-blur-2xl transition-all duration-300 ${
                   isHighlighted
                     ? "border-2 border-[#3B82F6] bg-[#1E293B] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_30px_-5px_rgba(59,130,246,0.3),inset_0_1px_0_0_rgba(255,255,255,0.12)] lg:-translate-y-2.5"
                     : "glass-card-interactive border border-white/[0.08] bg-[#1E293B]/85 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] hover:border-[#3B82F6]/30"

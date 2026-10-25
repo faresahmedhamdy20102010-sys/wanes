@@ -152,15 +152,15 @@ export function ServicesPage() {
         onOpenVoiceAssistant={() => {}}
       />
       <div className="pt-20">
-        <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="mb-8 text-center">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 md:py-20 lg:py-24 sm:px-6 lg:px-8">
+          <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-wider">
               Services Directory
             </div>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
               Browse Community Requests
             </h1>
-            <p className="mt-3 text-lg text-muted-foreground text-balance">
+            <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed max-w-2xl mx-auto text-balance">
               Filter by category, search by keyword, and post your own request instantly.
             </p>
           </div>
@@ -255,11 +255,11 @@ export function ServicesPage() {
               <Button onClick={() => setRequestModalOpen(true)} className="bg-[#3B82F6] text-white hover:bg-[#3B82F6]/90 font-semibold">Post a Request</Button>
             </div>
           ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {requests.map((req) => (
                 <Card
                   key={req.id}
-                  className="glass-card group cursor-pointer p-5 transition-all hover:border-[#3B82F6]/40 hover:shadow-lg bg-[#1E293B]/85 border-white/[0.08]"
+                  className="glass-card group cursor-pointer p-6 sm:p-7 transition-all hover:border-[#3B82F6]/40 hover:shadow-lg bg-[#1E293B]/85 border-white/[0.08]"
                 >
                   <div className="mb-3 flex items-start justify-between">
                     <div className="flex size-10 items-center justify-center rounded-lg bg-[#3B82F6]/10 text-[#3B82F6]">

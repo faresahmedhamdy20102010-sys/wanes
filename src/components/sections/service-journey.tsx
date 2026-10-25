@@ -111,7 +111,7 @@ export function ServiceJourney() {
     <section
       id="journey"
       ref={sectionRef}
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-16 sm:py-20"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-20 md:py-28 lg:py-36"
     >
       <div
         className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-96 w-full -translate-x-1/2 opacity-5 blur-3xl"
@@ -122,20 +122,20 @@ export function ServiceJourney() {
       />
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center sm:mb-12">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold text-[#06B6D4] uppercase tracking-wider">
+        <div className="mb-12 md:mb-16 lg:mb-20 text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-4 py-1.5 text-xs font-semibold text-[#06B6D4] uppercase tracking-wider">
             <CheckCircle2 className="size-3.5" />
             Care journey overview
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-4xl lg:text-5xl">
             How Requesting Care Works
           </h2>
-          <p className="mt-3 text-base text-[#94A3B8] sm:text-lg">
+          <p className="text-base text-[#94A3B8] sm:text-lg max-w-2xl mx-auto leading-relaxed text-balance">
             From your initial request to safe completion, your family is in control every step of the way.
           </p>
         </div>
 
-        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="relative pl-8 sm:pl-10">
               <div className="absolute left-3.5 top-3 bottom-3 w-1 rounded-full bg-white/[0.08] sm:left-4">
@@ -226,7 +226,7 @@ export function ServiceJourney() {
 
           <div className="lg:col-span-7">
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-[#1E293B] p-4 sm:p-8 md:p-10 border border-[#06B6D4]/20 backdrop-blur-xl shadow-2xl transition-all duration-500">
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-[#1E293B] p-6 sm:p-8 lg:p-10 border border-[#06B6D4]/20 backdrop-blur-xl shadow-2xl transition-all duration-500">
                 <div className="pointer-events-none absolute -right-16 -top-16 size-48 rounded-full bg-[#3B82F6]/3 blur-2xl" />
                 <div className="pointer-events-none absolute -left-16 -bottom-16 size-48 rounded-full bg-[#06B6D4]/2 blur-2xl" />
 

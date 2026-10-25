@@ -147,27 +147,27 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
   }, [selectedFilter, searchQuery])
 
   return (
-    <section id="services" className="relative scroll-mt-24 overflow-hidden bg-[#0F172A] py-16 sm:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="services" className="relative scroll-mt-24 overflow-hidden bg-[#0F172A] py-20 md:py-28 lg:py-36 px-4 sm:px-6 lg:px-8">
       <div className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-96 w-full max-w-7xl -translate-x-1/2 opacity-5 blur-[140px] bg-[#3B82F6]/10" />
       <div className="pointer-events-none absolute -bottom-40 right-10 -z-10 size-96 opacity-4 blur-[130px] bg-[#06B6D4]/10" />
 
       <div className="mx-auto max-w-7xl">
-        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 md:mb-16 lg:mb-20">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#06B6D4]/30 bg-[#3B82F6]/10 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#06B6D4] shadow-sm shadow-[#3B82F6]/10">
             <HeartHandshake className="size-3.5 text-[#06B6D4]" />
             <span>Everyday care &amp; companionship</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F8FAFC]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F8FAFC]">
             Compassionate Support, Tailored to You
           </h2>
 
-          <p className="text-sm sm:text-lg text-[#94A3B8] leading-relaxed text-balance">
+          <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed max-w-2xl mx-auto text-balance">
             Select any category below to request immediate assistance. Each visit is fulfilled by an identity-screened companion with live GPS tracking and 24/7 safety oversight.
           </p>
         </div>
 
-        <div className="mt-8 sm:mt-12 flex flex-col gap-3.5 sm:flex-row sm:items-center sm:justify-between max-w-4xl mx-auto">
+        <div className="mb-10 sm:mb-14 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between max-w-4xl mx-auto">
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 justify-center sm:justify-start">
             <button
               type="button"
@@ -208,13 +208,13 @@ export function ClientServicesSection({ onRequestService }: ClientServicesProps)
           </div>
         </div>
 
-        <div className="mt-8 sm:mt-12 grid gap-5 sm:gap-7 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:gap-8 lg:gap-10 md:grid-cols-2 lg:grid-cols-3">
           {filteredServices.map((service, index) => {
             const isFeatured = selectedFilter === "all" && index === 0
             return (
               <div
                 key={service.id}
-                className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-5 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#06B6D4]/40 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)] ${
+                className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-[#06B6D4]/15 bg-[#1E293B] p-6 sm:p-8 lg:p-10 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#06B6D4]/40 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)] ${
                   isFeatured ? "md:col-span-2 lg:col-span-2 border-[#3B82F6]/40 bg-gradient-to-br from-[#1E293B] via-[#1E293B] to-[#0F172A]" : ""
                 }`}
               >
